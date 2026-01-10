@@ -1,5 +1,5 @@
 class PriorityQueue {
-  constructor(comparator= (a, b) => a >= b) {
+  constructor(comparator= (a, b) => a <= b) {
     this.heap = []
     this.count = 0
     this.comparator = comparator
@@ -19,7 +19,7 @@ class PriorityQueue {
     if(this.heap.length > 1) {
       this.heapifyUp(insertIndex)
     }
-    console.info(this.heap)
+    // console.info(this.heap)
   }
 
   buildHeap(elements = []) {
@@ -106,15 +106,16 @@ class PriorityQueue {
 function main() {
   const minHeap = new PriorityQueue()
   const items  = [2, 7, 26, 25, 19, 17, 1, 90, 3, 36]
-  // minHeap.buildHeap(items)
-  minHeap.push(2)
-  minHeap.push(7)
-  minHeap.push(26)
-  minHeap.push(25)
-  minHeap.push(19)
+  minHeap.buildHeap(items)
+  // minHeap.push(2)
+  // minHeap.push(7)
+  // minHeap.push(26)
+  // minHeap.push(25)
+  // minHeap.push(19)
   // minHeap.buildHeap(items)  
+  console.info('Heap array structure \n')
   console.info(minHeap.heap)
-  console.info("sorted- \n", minHeap.sort())
+  // console.info("sorted- \n", minHeap.sort())
 }
 
 main()

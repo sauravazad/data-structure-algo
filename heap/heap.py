@@ -17,7 +17,7 @@ class PriorityQueue:
   heap_type: HeapType
   # comparator: function
   elements: int
-  def __init__(self, type: HeapType, comparator = lambda a, b: a>=b ):
+  def __init__(self, type: HeapType, comparator = lambda a, b: a<=b ):
     self.items = []
     # self.build_heap(items)
     self.heap_type = type
@@ -48,8 +48,8 @@ class PriorityQueue:
   def pop(self) -> int:
     count = len(self.items)
     if count > 0 :
-      print("pop the element:\t", self.items[0])
       item = self.items[0]
+      print("pop the element:\t", item)
       # check if the items are more than 1 only the we need to do heapify else simply pop the elements
       if count > 1:
         #  assign the last element form array to root
@@ -68,30 +68,33 @@ class PriorityQueue:
     leftNode = (element_index * 2) + 1
     rightNode = (element_index * 2) + 2
     #  check if the heap property is not violated
-    heapify = False
-    largest = element_index # for brevity suing largest for max-heap
-
-    if leftNode < len(self.items) and self.comparator(self.items[element_index], self.items[leftNode] == False):
-      heapify = True
-      largest = leftNode
+    swap_index = element_index
+    parent = self.items[element_index]
+    # largest = element_index # for brevity suing largest for max-heap
+    # print("parentIndex ", element_index, "leftNodeIndex:", leftNode ,"rightIndex", rightNode)
+    # print("parent ", parent, "leftNode:", self.items[leftNode] ,"rightNode", self.items[rightNode])
+    if leftNode < len(self.items) and self.comparator(self.items[leftNode], parent):
+      swap_index = leftNode
     
-    if rightNode < len(self.items) and self.comparator(self.items[element_index], self.items[rightNode] == False):
-      heapify = True
-      if(self.comparator(self.items[largest], self.items[rightNode]) == False):
-        largest = rightNode
+    if rightNode < len(self.items) and self.comparator(self.items[rightNode], self.items[swap_index]):
+      # if(self.comparator(self.items[largest], self.items[rightNode]) == False):
+      swap_index = rightNode
     # swap the parent and the largest or smallest
-    if heapify :
-      [self.items[element_index], self.items[largest]] = [self.items[largest], self.items[element_index]]
-      self.heapify_down(largest)
+    if swap_index !=  element_index:
+      [self.items[element_index], self.items[swap_index]] = [self.items[swap_index], self.items[element_index]]
+      self.heapify_down(swap_index)
       
 
     
-  def heapify_up(self, element_index: int) -> None :
-    parent = element_index - 1 // 2 # -1 as the array index is 0 to compensate
+  def heapify_up(self, node_index: int) -> None :
+    # if we have reached the root node return
+    if node_index == 0: return
+    parent = (node_index - 1) // 2 # -1 as the array index is 0 to compensate
     #  check if the condition that parent is less/greater than the inserted child accordingly
-    if parent >= 0 and element_index > 0 and self.comparator(self.items[parent], self.items[element_index]) == False:
-      # swap the elements and call heapify_down
-      [self.items[element_index], self.items[parent]] = [self.items[parent], self.items[element_index]]
+    # print("compare parent", self.items[parent] , "child", self.items[node_index])
+    if node_index > 0 and self.comparator(self.items[parent], self.items[node_index]) == False:
+      # swap the element with its parent  and call heapify_up
+      [self.items[node_index], self.items[parent]] = [self.items[parent], self.items[node_index]]
       self.heapify_up(parent)
 
       
@@ -105,15 +108,20 @@ def heap_sort(heap: PriorityQueue) -> List[int]:
     return result
  
 if __name__ == "__main__":
-  heap = PriorityQueue(HeapType.MAX)
-  heap.build_heap([2, 7, 26, 25, 19, 17, 1, 90, 3, 36])
+  minHeap = PriorityQueue(HeapType.MIN)
+  minHeap.build_heap([2, 7, 26, 25, 19, 17, 1, 90, 3, 36])
+  print(minHeap.items)
+  print(heap_sort(minHeap))
+  print("=="*20)
+  maxHeap = PriorityQueue(HeapType.MAX, lambda a, b: a>=b)
+  maxHeap.build_heap([2, 7, 26, 25, 19, 17, 1, 90, 3, 36])
   # heap.insert(2)
   # heap.insert(7)
   # heap.insert(26)
   # heap.insert(25)
   # heap.insert(19)
-  print(heap.items)
-  print(heap_sort(heap))
+  print(maxHeap.items)
+  print(heap_sort(maxHeap))
 
   # heap = PriorityQueue([2, 7, 26, 25, 19, 17, 1, 90, 3, 36])
   # print(heap.reverse_sort())
