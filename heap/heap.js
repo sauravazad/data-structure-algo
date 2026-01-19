@@ -94,6 +94,11 @@ class PriorityQueue {
       this.heapifyDown(swapIndex)
     }
   }
+
+  buildKItemsPriority(elements, k) {
+
+  }
+
   sort() {
     const sorted = []
     while(this.heap.length) {
