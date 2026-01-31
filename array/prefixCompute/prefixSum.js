@@ -13,7 +13,6 @@ prefixSum[2] = prefixSum[1] + arr[2] = 40 and so on.
 
 */
 
-
 /**
 Sum of an array between indexes L and R using Prefix Sum:
 
@@ -23,29 +22,28 @@ Given an array arr[] of size N. Given Q queries and in each query given L and R,
 const runningSum = (numbers) => {
   const prefix = []
   const n = numbers.length
-  for(let i = 0; i < n ; i++ ) {
-    prefix[i] =  (prefix[i -1] || 0)  + numbers[i]
+  for (let i = 0; i < n; i++) {
+    prefix[i] = (prefix[i - 1] || 0) + numbers[i]
   }
   return prefix
 }
 
-
 // Driver code
-var main = function () {
+const main = function () {
   const input = [
-    [1,2,3,4],
-    [1,1,1,1,1]
+    [1, 2, 3, 4],
+    [1, 1, 1, 1, 1]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array:", input[i]);
-      var result = runningSum(input[i]);
-      console.log("\t Result is",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = runningSum(input[i])
+    console.log('\t Result is', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

@@ -37,7 +37,6 @@ Explanation:
 
 The input binary string 1111111111111111111111111111101 has a total of thirty set bits.
 
-
 ------------------------------------------------------------------------------------
 Input:
 
@@ -49,24 +48,23 @@ Constraints:
 */
 
 /**
- Intuition: 
- Time Complexity: 
+ Intuition:
+ Time Complexity:
  Space Complexity:
- Notes: 
+ Notes:
  */
-var hammingWeight = function(n) {
-    let count = 0
-    while(n) {
-        if(n%2 == 1) count++
-        n = parseInt(n / 2, 10)
-    }
-    return count
-};
+const hammingWeight = function (n) {
+  let count = 0
+  while (n) {
+    if (n % 2 == 1) count++
+    n = parseInt(n / 2, 10)
+  }
+  return count
+}
 
 // Driver code
- 
 
-var main = function () {
+const main = function () {
   const fn = hammingWeight
   const input = [11, 28, 2147483645]
   const expectedOutput = [3, 1, 30]
@@ -74,12 +72,12 @@ var main = function () {
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

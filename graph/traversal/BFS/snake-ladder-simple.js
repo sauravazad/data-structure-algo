@@ -38,12 +38,12 @@ In the 4th turn you throw a 6 (to reach 36)
 
 */
 class Graph {
-  constructor() {
+  constructor () {
     this.vertices = {}
     this.maxDegreeIndex = 0
   }
 
-  addEdge(i, j, isDirected) {
+  addEdge (i, j, isDirected) {
     if (isDirected) {
       this.vertices[i] = this.vertices[i] || []
       this.vertices[i].push(j)
@@ -58,24 +58,24 @@ class Graph {
 
 const minJumps = (n, ladder, snakes) => {
   const graph = new Graph()
-  const board = Array(n+1).fill(0)
+  const board = Array(n + 1).fill(0)
   // fill the board with cost ie: if it has a ladder positive else negative
-  for(let l of ladder) {
+  for (const l of ladder) {
     board[l[0]] = l[1] - l[0]
   }
-  for(let s of snakes) {
+  for (const s of snakes) {
     board[s[0]] = s[1] - s[0]
   }
   // build a graph with the edges for all possible combinations
   // iterate over all the cells on the board
-  for( let i = 1; i <= n ; i++) {
+  for (let i = 1; i <= n; i++) {
     // for every dice value
-    for(let d = 1; d <=6; d++) {
+    for (let d = 1; d <= 6; d++) {
       const source = i
       let destination = d + source
       // adjust for snake or ladder
       destination += board[destination]
-      if(destination <= n) graph.addEdge(source, destination)
+      if (destination <= n) graph.addEdge(source, destination)
     }
   }
 
@@ -87,18 +87,18 @@ const minJumps = (n, ladder, snakes) => {
     visited[origin] = true
     depth[origin] = 0
 
-    while(queue.length) {
+    while (queue.length) {
       const current = queue.shift()
       let e
-      for(e of graph.vertices[current]) {
-        if(!visited[e]) {
+      for (e of graph.vertices[current]) {
+        if (!visited[e]) {
           queue.push(e)
           visited[e] = true
           depth[e] = depth[current] + 1
-          if(e === destination) break
+          if (e === destination) break
         }
       }
-      if(e === destination) break
+      if (e === destination) break
     }
     // console.info(depth)
     return depth[destination]
@@ -109,8 +109,8 @@ const minJumps = (n, ladder, snakes) => {
 }
 
 // Driver code
-var main = function () {
-  const fn =minJumps
+const main = function () {
+  const fn = minJumps
 
   const n = 36
   const ladders = [[2, 15], [5, 7], [9, 27], [18, 29], [25, 35]]
@@ -122,12 +122,12 @@ var main = function () {
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

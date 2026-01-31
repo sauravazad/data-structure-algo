@@ -13,34 +13,31 @@ The average of x elements is the sum of the x elements divided by x, using integ
 
  */
 
-
-var getAverages = function(nums, k) {
-  
+const getAverages = function (nums, k) {
   const prefix = []
   prefix[0] = nums[0]
-  for(let i = i ; i < nums.length; i++) {
-    prefix[i] = prefix[i-1] = nums[i]
+  for (let i = i; i < nums.length; i++) {
+    prefix[i] = prefix[i - 1] = nums[i]
   }
 
   /**
    * TODO: READ : Sliding window and prefix sum :
    */
-  
-};
+}
 // Driver code
-var main = function () {
+const main = function () {
   const fn = getAverages
   const input = []
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

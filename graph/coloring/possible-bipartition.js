@@ -3,24 +3,24 @@
 https://leetcode.com/problems/possible-bipartition
  */
 const possibleBipartition = (v, edges) => {
-  const g = Array(v+1).fill().map(() => Array().fill([]))
+  const g = Array(v + 1).fill().map(() => Array().fill([]))
 
-  for(let e of edges) {
+  for (const e of edges) {
     g[e[0]].push(e[1])
     g[e[1]].push(e[0])
   }
-  const color = Array(v+1).fill(-1) // node may start from 0 or 1
+  const color = Array(v + 1).fill(-1) // node may start from 0 or 1
 
   const isBipartite = (source, c) => {
     const queue = []
     queue.push(source)
     // Assign first color to source
-    color[source] = c;
-    while(queue.length) {
+    color[source] = c
+    while (queue.length) {
       const current = queue.shift()
-      for(let neighbor of g[current]) {
+      for (const neighbor of g[current]) {
         // if not colored fill alternate color
-        if(color[neighbor] == -1) {
+        if (color[neighbor] == -1) {
           color[neighbor] = 1 - color[current]
           queue.push(neighbor)
         } else if (color[neighbor] === color[current]) {
@@ -33,9 +33,9 @@ const possibleBipartition = (v, edges) => {
   }
 
   // iterate over the graph and call isBipartite if color is not allocated
-  for(let i = 0; i <= v; i++) {
-    if(color[i] == -1) {
-      if (isBipartite(i, 0) === false)  return false
+  for (let i = 0; i <= v; i++) {
+    if (color[i] == -1) {
+      if (isBipartite(i, 0) === false) return false
     }
   }
   return true
@@ -47,7 +47,7 @@ const main = () => {
 
   console.log('Is Bipartite Graph ? ', possibleBipartition(v, edges))
 
-  console.log('Is Bipartite Graph ? ', possibleBipartition(3,  [[1,2],[1,3],[2,3]]))
+  console.log('Is Bipartite Graph ? ', possibleBipartition(3, [[1, 2], [1, 3], [2, 3]]))
 }
 
 main()

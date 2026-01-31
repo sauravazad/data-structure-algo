@@ -1,9 +1,8 @@
-
 const createGraphUndirected = (N, edges, isDirected = false) => {
   const graph = {}
-  for (let e of edges) {
+  for (const e of edges) {
     graph[e[0]] ? graph[e[0]].add(e[1]) : graph[e[0]] = new Set([e[1]])
-    if(!isDirected) {
+    if (!isDirected) {
       graph[e[1]] ? graph[e[1]].add(e[0]) : graph[e[1]] = new Set([e[0]])
     }
   }
@@ -38,35 +37,35 @@ const DFS = (N, edges) => {
   const graph = createGraphUndirected(N, edges)
   const DFSHelper = (current) => {
     visited.set(current, true)
-    for(let neighbors of graph[current]) {
-      if(!visited.has(neighbors)) {
+    for (const neighbors of graph[current]) {
+      if (!visited.has(neighbors)) {
         DFSHelper(neighbors)
       }
     }
   }
   DFSHelper(edges[0][0])
-  let path = []
-  for(let v of visited.keys()) {
+  const path = []
+  for (const v of visited.keys()) {
     path.push(v)
   }
   return path
 }
 // Driver code
-var main = function () {
-	const fn = DFS;
-	const input = [
-		[4,[[0, 1],[0, 2],[1, 2],[2, 3],[3, 3]]],
-	];
-	/**
+const main = function () {
+  const fn = DFS
+  const input = [
+    [4, [[0, 1], [0, 2], [1, 2], [2, 3], [3, 3]]]
+  ]
+  /**
 	 *  Fill the time complexity for each function
 	 */
 
-	for (var i = 0; i < input.length; i++) {
-		console.log(i + 1 + ".\t Input array:", input[i]);
-		var result = fn(...input[i]);
-		console.log("\t Result is", result);
-		console.log("-".repeat(100));
-	}
-};
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is', result)
+    console.log('-'.repeat(100))
+  }
+}
 
-main();
+main()

@@ -1,0 +1,1311 @@
+{
+  "TODO/fair-distribution-of-cookies.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "array.js": {
+    "@stylistic/max-len": {
+      "count": 116
+    }
+  },
+  "array/MEX/findMex.js": {
+    "@stylistic/max-len": {
+      "count": 50
+    }
+  },
+  "array/MEX/first-missing-positive.js": {
+    "@stylistic/max-len": {
+      "count": 27
+    }
+  },
+  "array/TODO-next-smaller-element-in-array.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "array/backspace-string-compare.js": {
+    "@stylistic/max-len": {
+      "count": 57
+    }
+  },
+  "array/group-anagrams.js": {
+    "@stylistic/max-len": {
+      "count": 90
+    }
+  },
+  "array/minimum-absolute-difference.js": {
+    "@stylistic/max-len": {
+      "count": 76
+    }
+  },
+  "array/minimum-cost-of-buying-candies-with-discount.js": {
+    "@stylistic/max-len": {
+      "count": 78
+    }
+  },
+  "array/minimum-prefix-removal-to-make-array-strictly-increasing.js": {
+    "@stylistic/max-len": {
+      "count": 65
+    }
+  },
+  "array/prefixCompute/TODO-maximum-consecutive-floors.js": {
+    "@stylistic/max-len": {
+      "count": 2
+    }
+  },
+  "array/prefixCompute/TODO-maximum-number-of-non-overlapping-subarrays-with-sum-equals-target.js": {
+    "@stylistic/max-len": {
+      "count": 49
+    }
+  },
+  "array/prefixCompute/closest-room.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "array/prefixCompute/k-radius-sub-array.js": {
+    "@stylistic/max-len": {
+      "count": 31
+    }
+  },
+  "array/prefixCompute/prefixSum.js": {
+    "@stylistic/max-len": {
+      "count": 37
+    }
+  },
+  "array/prefixCompute/range-sum-of-sorted-subarray-sums.js": {
+    "@stylistic/max-len": {
+      "count": 55
+    }
+  },
+  "array/prefixCompute/sum-of-absolute-differences-in-a-sorted-array.js": {
+    "@stylistic/max-len": {
+      "count": 57
+    }
+  },
+  "array/previous-smaller-element-in-array.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "array/sort/cyclic-short.js": {
+    "@stylistic/max-len": {
+      "count": 79
+    }
+  },
+  "backtracking/TODO-combinations.js": {
+    "@stylistic/max-len": {
+      "count": 31
+    }
+  },
+  "binary.js": {
+    "@stylistic/max-len": {
+      "count": 110
+    }
+  },
+  "binarysearch/findClosestElements.js": {
+    "@stylistic/max-len": {
+      "count": 51
+    }
+  },
+  "binarysearch/findInpivotArray.js": {
+    "@stylistic/max-len": {
+      "count": 45
+    }
+  },
+  "binarysearch/findMinInPivoted.js": {
+    "@stylistic/max-len": {
+      "count": 50
+    }
+  },
+  "binarysearch/findNearest.js": {
+    "@stylistic/max-len": {
+      "count": 4
+    }
+  },
+  "binarysearch/findPeakElement.js": {
+    "@stylistic/max-len": {
+      "count": 41
+    }
+  },
+  "binarysearch/firstBadVersion.js": {
+    "@stylistic/max-len": {
+      "count": 54
+    }
+  },
+  "binarysearch/insert/binary-insert.js": {
+    "@stylistic/max-len": {
+      "count": 30
+    }
+  },
+  "binarysearch/insert/seat-reservation-manager.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "binarysearch/insert/sliding-window-median.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "binarysearch/searchRange.js": {
+    "@stylistic/max-len": {
+      "count": 102
+    },
+    "no-redeclare": {
+      "count": 1
+    }
+  },
+  "bit-mask/construct-the-minimum-bitwise-array-i.js": {
+    "@stylistic/max-len": {
+      "count": 109
+    }
+  },
+  "bit-mask/construct-the-minimum-bitwise-array-ii.js": {
+    "@stylistic/max-len": {
+      "count": 68
+    }
+  },
+  "bit-mask/maximum-odd-binary-number.js": {
+    "@stylistic/max-len": {
+      "count": 39
+    }
+  },
+  "bit-mask/number-of-1-bits.js": {
+    "@stylistic/max-len": {
+      "count": 54
+    }
+  },
+  "bit-mask/reverse-bits.js": {
+    "@stylistic/max-len": {
+      "count": 77
+    }
+  },
+  "bits/decode-xored-array.js": {
+    "@stylistic/max-len": {
+      "count": 24
+    }
+  },
+  "bits/decode-xored-permutation.js": {
+    "@stylistic/max-len": {
+      "count": 67
+    }
+  },
+  "bits/find-the-original-array-of-prefix-xor.js": {
+    "@stylistic/max-len": {
+      "count": 28
+    }
+  },
+  "bits/k-th-symbol-in-grammar.js": {
+    "@stylistic/max-len": {
+      "count": 43
+    }
+  },
+  "bits/sort-integers-by-the-number-of-1-bits.js": {
+    "@stylistic/max-len": {
+      "count": 37
+    }
+  },
+  "dp/LCS/1-TODO-find-the-shortest-superstring.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/alternating-subsequence/TODO-maximum-alternating-subsequence-sum.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/alternating-subsequence/longest-alternating-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 113
+    }
+  },
+  "dp/LCS/alternating-subsequence/rearrange-array-elements-by-sign.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/alternating-subsequence/wiggle-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/delete-operation-for-string.js": {
+    "@stylistic/max-len": {
+      "count": 35
+    }
+  },
+  "dp/LCS/edit-distance-problem.js": {
+    "@stylistic/max-len": {
+      "count": 95
+    }
+  },
+  "dp/LCS/lcs-sequence.js": {
+    "@stylistic/max-len": {
+      "count": 57
+    }
+  },
+  "dp/LCS/lcs-string.js": {
+    "@stylistic/max-len": {
+      "count": 81
+    }
+  },
+  "dp/LCS/max-dot-product-of-two-subsequences.js": {
+    "@stylistic/max-len": {
+      "count": 49
+    }
+  },
+  "dp/LCS/minimum-ascii-delete-sum-for-two-strings.js": {
+    "@stylistic/max-len": {
+      "count": 50
+    }
+  },
+  "dp/LCS/minimum-number-of-deletions-and-insertions.js": {
+    "@stylistic/max-len": {
+      "count": 43
+    }
+  },
+  "dp/LCS/palindromic-subsequenes/longest-palindromic-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 57
+    }
+  },
+  "dp/LCS/palindromic-subsequenes/longest-palindromic-substring.js": {
+    "@stylistic/max-len": {
+      "count": 60
+    }
+  },
+  "dp/LCS/palindromic-subsequenes/longest-subsequence-repeated-k-times.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/palindromic-subsequenes/palindromic-partitioning.js": {
+    "@stylistic/max-len": {
+      "count": 35
+    }
+  },
+  "dp/LCS/palindromic-subsequenes/palindromic-substrings.js": {
+    "@stylistic/max-len": {
+      "count": 35
+    }
+  },
+  "dp/LCS/repeating-subsequence/TODO-concatenated-words.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/repeating-subsequence/TODO-increasing-triplet-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/repeating-subsequence/TODO-minimum-deletions-to-make-array-beautiful.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/repeating-subsequence/TODO-minimum-deletions-to-make-string-balanced.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/repeating-subsequence/bitonic-subsequence/0-TODO-valid-mountain-array.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/repeating-subsequence/bitonic-subsequence/1-TODO-longest-mountain-in-array.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/repeating-subsequence/bitonic-subsequence/2-TODO-peak-index-in-a-mountain-array.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/LCS/repeating-subsequence/bitonic-subsequence/4-TODO-make-mountain-array.js": {
+    "@stylistic/max-len": {
+      "count": 5
+    }
+  },
+  "dp/LCS/repeating-subsequence/bitonic-subsequence/longest-bitonic-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 71
+    }
+  },
+  "dp/LCS/repeating-subsequence/building-bridges-LIS.js": {
+    "@stylistic/max-len": {
+      "count": 64
+    }
+  },
+  "dp/LCS/repeating-subsequence/distinct-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 67
+    }
+  },
+  "dp/LCS/repeating-subsequence/interleaving-strings.js": {
+    "@stylistic/max-len": {
+      "count": 103
+    }
+  },
+  "dp/LCS/repeating-subsequence/longest-increasing-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 96
+    }
+  },
+  "dp/LCS/repeating-subsequence/longest-repeating-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 52
+    }
+  },
+  "dp/LCS/repeating-subsequence/maximum-sum-increasing-subsequence.js": {
+    "@stylistic/max-len": {
+      "count": 53
+    }
+  },
+  "dp/LCS/repeating-subsequence/minimum-number-of-deletions-to-make-a-sorted.js": {
+    "@stylistic/max-len": {
+      "count": 54
+    }
+  },
+  "dp/LCS/repeating-subsequence/word-break-ii.js": {
+    "@stylistic/max-len": {
+      "count": 133
+    }
+  },
+  "dp/LCS/repeating-subsequence/word-break.js": {
+    "@stylistic/max-len": {
+      "count": 88
+    }
+  },
+  "dp/LCS/shortest-common-supersequence-length.js": {
+    "@stylistic/max-len": {
+      "count": 90
+    }
+  },
+  "dp/LCS/shortest-common-supersequence.js": {
+    "@stylistic/max-len": {
+      "count": 112
+    }
+  },
+  "dp/TODO-best-team-with-no-conflicts.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/TODO-best-time-to-buy-and-sell-stock.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/TODO-cinema-seat.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/TODO-count-artefacts.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/TODO-cutting-a-pizza.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/TODO-good-subarray.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/TODO-make-the-fence-great-again.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/TODO-minimum-cost-path-with-teleportations.js": {
+    "@stylistic/max-len": {
+      "count": 61
+    }
+  },
+  "dp/TODO-minimum-jumps-to-reach-home.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/TODO-range-sum.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/TODO-superwashin-machine.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/TODO-zuma-game.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/buy-sell-stock/best-time-to-buy-and-sell-stock-ii.js": {
+    "@stylistic/max-len": {
+      "count": 11
+    }
+  },
+  "dp/buy-sell-stock/best-time-to-buy-and-sell-stock.js": {
+    "@stylistic/max-len": {
+      "count": 25
+    }
+  },
+  "dp/climbing-stairs.js": {
+    "@stylistic/max-len": {
+      "count": 28
+    }
+  },
+  "dp/coin-change.js": {
+    "@stylistic/max-len": {
+      "count": 121
+    },
+    "no-irregular-whitespace": {
+      "count": 1
+    }
+  },
+  "dp/count-sub-matrices-1.js": {
+    "@stylistic/max-len": {
+      "count": 60
+    }
+  },
+  "dp/count-vowels-permutation.js": {
+    "@stylistic/max-len": {
+      "count": 38
+    }
+  },
+  "dp/counting-bits.js": {
+    "@stylistic/max-len": {
+      "count": 96
+    }
+  },
+  "dp/distanceTravelled.js": {
+    "@stylistic/max-len": {
+      "count": 32
+    }
+  },
+  "dp/game-theory/TODO-minimum-number-of-operations-to-make-string-sorted.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/game-theory/grid-game.js": {
+    "@stylistic/max-len": {
+      "count": 40
+    }
+  },
+  "dp/knapsack/01-knapsack.js": {
+    "@stylistic/max-len": {
+      "count": 125
+    }
+  },
+  "dp/knapsack/count-square-sub-matrix.js": {
+    "@stylistic/max-len": {
+      "count": 116
+    }
+  },
+  "dp/knapsack/count-target-sum.js": {
+    "@stylistic/max-len": {
+      "count": 130
+    }
+  },
+  "dp/knapsack/equal-sum-subarray.js": {
+    "@stylistic/max-len": {
+      "count": 94
+    }
+  },
+  "dp/knapsack/maximum-square.js": {
+    "@stylistic/max-len": {
+      "count": 50
+    }
+  },
+  "dp/knapsack/min-fuel-stop.js": {
+    "@stylistic/max-len": {
+      "count": 147
+    }
+  },
+  "dp/knapsack/painting-the-walls.js": {
+    "@stylistic/max-len": {
+      "count": 29
+    }
+  },
+  "dp/knapsack/partitionarray.js": {
+    "@stylistic/max-len": {
+      "count": 110
+    }
+  },
+  "dp/knapsack/subsetsum.js": {
+    "@stylistic/max-len": {
+      "count": 141
+    }
+  },
+  "dp/knapsack/targetsum.js": {
+    "@stylistic/max-len": {
+      "count": 81
+    }
+  },
+  "dp/largest-are-in-histogram.js": {
+    "@stylistic/max-len": {
+      "count": 130
+    }
+  },
+  "dp/maximal-rectangle.js": {
+    "@stylistic/max-len": {
+      "count": 83
+    }
+  },
+  "dp/min-cost-climbing-stairs.js": {
+    "@stylistic/max-len": {
+      "count": 73
+    }
+  },
+  "dp/min-max-path-to-target/2-keys-keyboard.js": {
+    "@stylistic/max-len": {
+      "count": 65
+    }
+  },
+  "dp/min-max-path-to-target/last-stone-weight-ii.js": {
+    "@stylistic/max-len": {
+      "count": 64
+    }
+  },
+  "dp/min-max-path-to-target/maximum-points-you-can-obtain-from-cards.js": {
+    "@stylistic/max-len": {
+      "count": 58
+    }
+  },
+  "dp/min-max-path-to-target/minimum-cost-for-tickets.js": {
+    "@stylistic/max-len": {
+      "count": 105
+    }
+  },
+  "dp/min-max-path-to-target/minimum-falling-path-sum-ii.js": {
+    "@stylistic/max-len": {
+      "count": 73
+    }
+  },
+  "dp/min-max-path-to-target/minimum-falling-path-sum.js": {
+    "@stylistic/max-len": {
+      "count": 125
+    }
+  },
+  "dp/min-max-path-to-target/minimum-path-sum.js": {
+    "@stylistic/max-len": {
+      "count": 69
+    }
+  },
+  "dp/min-max-path-to-target/perfect-squares.js": {
+    "@stylistic/max-len": {
+      "count": 94
+    }
+  },
+  "dp/min-max-path-to-target/triangle.js": {
+    "@stylistic/max-len": {
+      "count": 59
+    }
+  },
+  "dp/painting-n-houses.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/recursive numbers/Number-Factors.js": {
+    "@stylistic/max-len": {
+      "count": 22
+    }
+  },
+  "dp/recursive numbers/Staircase-problem.js": {
+    "@stylistic/max-len": {
+      "count": 43
+    }
+  },
+  "dp/recursive numbers/TODO-bracket-sequence-1.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/recursive numbers/TODO-jump-game-v.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/recursive numbers/TODO-maximum-product-subarray.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/recursive numbers/TODO-tiling-a-rectangle-with-the-fewest-squares.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/recursive numbers/catalan-number.js": {
+    "@stylistic/max-len": {
+      "count": 48
+    }
+  },
+  "dp/recursive numbers/domino-and-tromino-tiling.js": {
+    "@stylistic/max-len": {
+      "count": 31
+    }
+  },
+  "dp/recursive numbers/fibbonacci.js": {
+    "@stylistic/max-len": {
+      "count": 44
+    }
+  },
+  "dp/recursive numbers/friends-pair.js": {
+    "@stylistic/max-len": {
+      "count": 32
+    }
+  },
+  "dp/recursive numbers/house-robber-1.js": {
+    "@stylistic/max-len": {
+      "count": 53
+    }
+  },
+  "dp/recursive numbers/house-robber-2.js": {
+    "@stylistic/max-len": {
+      "count": 47
+    }
+  },
+  "dp/recursive numbers/jump-game.js": {
+    "@stylistic/max-len": {
+      "count": 38
+    }
+  },
+  "dp/recursive numbers/matrix-chain-multiplication.js": {
+    "@stylistic/max-len": {
+      "count": 92
+    }
+  },
+  "dp/recursive numbers/min-jumps-to-end.js": {
+    "@stylistic/max-len": {
+      "count": 57
+    }
+  },
+  "dp/recursive numbers/min-jumps-with-fee.js": {
+    "@stylistic/max-len": {
+      "count": 53
+    }
+  },
+  "dp/recursive numbers/minimum-cost-homecoming.js": {
+    "@stylistic/max-len": {
+      "count": 3
+    }
+  },
+  "dp/recursive numbers/pascles-triangle.js": {
+    "@stylistic/max-len": {
+      "count": 48
+    }
+  },
+  "dp/recursive numbers/todo-buy-and-sell-stock.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/recursive numbers/unique-paths-to-goal.js": {
+    "@stylistic/max-len": {
+      "count": 100
+    }
+  },
+  "dp/sum-disatnce-tree.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "dp/trapping-rain-water.js": {
+    "@stylistic/max-len": {
+      "count": 2
+    }
+  },
+  "dp/unbounded/count-coin-change.js": {
+    "@stylistic/max-len": {
+      "count": 135
+    }
+  },
+  "dp/unbounded/maximum-ribbon.js": {
+    "@stylistic/max-len": {
+      "count": 97
+    }
+  },
+  "dp/unbounded/minimum-coin-change.js": {
+    "@stylistic/max-len": {
+      "count": 92
+    }
+  },
+  "dp/unbounded/rodcutting.js": {
+    "@stylistic/max-len": {
+      "count": 118
+    }
+  },
+  "dp/unbounded/unbounded-knapsack.js": {
+    "@stylistic/max-len": {
+      "count": 136
+    }
+  },
+  "eslint.config.js": {
+    "@stylistic/max-len": {
+      "count": 27
+    }
+  },
+  "graph/adjecency-list/add-edges-to-make-degrees-of-all-nodes-even.js": {
+    "@stylistic/max-len": {
+      "count": 81
+    }
+  },
+  "graph/adjecency-list/adjecency-list.js": {
+    "@stylistic/max-len": {
+      "count": 38
+    }
+  },
+  "graph/adjecency-list/binary-insert.js": {
+    "@stylistic/max-len": {
+      "count": 47
+    }
+  },
+  "graph/adjecency-list/find-center-of-start.js": {
+    "@stylistic/max-len": {
+      "count": 33
+    }
+  },
+  "graph/adjecency-list/maximal-network-rank.js": {
+    "@stylistic/max-len": {
+      "count": 47
+    }
+  },
+  "graph/adjecency-list/maximum-star-sum-of-a-graph.js": {
+    "@stylistic/max-len": {
+      "count": 79
+    }
+  },
+  "graph/adjecency-list/minimum-degree-of-a-connected-trio-in-a-graph.js": {
+    "@stylistic/max-len": {
+      "count": 65
+    }
+  },
+  "graph/adjecency-matrix/graph-matrix.js": {
+    "@stylistic/max-len": {
+      "count": 38
+    }
+  },
+  "graph/coloring/flower-planting-with-no-adjacent.js": {
+    "@stylistic/max-len": {
+      "count": 63
+    }
+  },
+  "graph/coloring/is-graph-bipartite.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/coloring/m-coloring-problem.js": {
+    "@stylistic/max-len": {
+      "count": 52
+    }
+  },
+  "graph/coloring/possible-bipartition-TLE.js": {
+    "@stylistic/max-len": {
+      "count": 67
+    }
+  },
+  "graph/coloring/possible-bipartition.js": {
+    "@stylistic/max-len": {
+      "count": 44
+    }
+  },
+  "graph/topological-sorting/course-schedule-ii.js": {
+    "@stylistic/max-len": {
+      "count": 77
+    }
+  },
+  "graph/topological-sorting/course-schedule-iii.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/topological-sorting/course-schedule.js": {
+    "@stylistic/max-len": {
+      "count": 50
+    }
+  },
+  "graph/topological-sorting/parallel-courses-iii.js": {
+    "@stylistic/max-len": {
+      "count": 24
+    }
+  },
+  "graph/traversal/BFS/TO-DO-detect-cycle-directed.js": {
+    "@stylistic/max-len": {
+      "count": 28
+    }
+  },
+  "graph/traversal/BFS/bfs-path-depth.js": {
+    "@stylistic/max-len": {
+      "count": 63
+    }
+  },
+  "graph/traversal/BFS/bfs.js": {
+    "@stylistic/max-len": {
+      "count": 51
+    }
+  },
+  "graph/traversal/BFS/color-islands.js": {
+    "@stylistic/max-len": {
+      "count": 52
+    }
+  },
+  "graph/traversal/BFS/count-sub-islands.js": {
+    "@stylistic/max-len": {
+      "count": 87
+    }
+  },
+  "graph/traversal/BFS/depth.js": {
+    "@stylistic/max-len": {
+      "count": 55
+    }
+  },
+  "graph/traversal/BFS/detect-cycle-grid.js": {
+    "@stylistic/max-len": {
+      "count": 74
+    }
+  },
+  "graph/traversal/BFS/detect-cycle.js": {
+    "@stylistic/max-len": {
+      "count": 64
+    }
+  },
+  "graph/traversal/BFS/evaluate-division.js": {
+    "@stylistic/max-len": {
+      "count": 96
+    }
+  },
+  "graph/traversal/BFS/island-perimeter.js": {
+    "@stylistic/max-len": {
+      "count": 66
+    }
+  },
+  "graph/traversal/BFS/making-a-large-island.js": {
+    "@stylistic/max-len": {
+      "count": 98
+    }
+  },
+  "graph/traversal/BFS/max-area-of-island.js": {
+    "@stylistic/max-len": {
+      "count": 52
+    }
+  },
+  "graph/traversal/BFS/minimum-cost.js": {
+    "@stylistic/max-len": {
+      "count": 60
+    }
+  },
+  "graph/traversal/BFS/number-of-islands-bfs.js": {
+    "@stylistic/max-len": {
+      "count": 77
+    }
+  },
+  "graph/traversal/BFS/open-the-lock.js": {
+    "@stylistic/max-len": {
+      "count": 80
+    }
+  },
+  "graph/traversal/BFS/path-with-minimum-effort.js": {
+    "@stylistic/max-len": {
+      "count": 85
+    }
+  },
+  "graph/traversal/BFS/print-parent.js": {
+    "@stylistic/max-len": {
+      "count": 60
+    }
+  },
+  "graph/traversal/BFS/snake-ladder-simple.js": {
+    "@stylistic/max-len": {
+      "count": 103
+    }
+  },
+  "graph/traversal/BFS/snakes-and-ladders.js": {
+    "@stylistic/max-len": {
+      "count": 51
+    }
+  },
+  "graph/traversal/BFS/sortest-cycle-in-graph.js": {
+    "@stylistic/max-len": {
+      "count": 65
+    }
+  },
+  "graph/traversal/BFS/swim-in-rising-water.js": {
+    "@stylistic/max-len": {
+      "count": 72
+    }
+  },
+  "graph/traversal/BFS/valid-bfs.js": {
+    "@stylistic/max-len": {
+      "count": 70
+    }
+  },
+  "graph/traversal/BFS/word-ladder-ii.js": {
+    "@stylistic/max-len": {
+      "count": 104
+    }
+  },
+  "graph/traversal/BFS/word-ladder.js": {
+    "@stylistic/max-len": {
+      "count": 75
+    }
+  },
+  "graph/traversal/DFS/all-paths-from-source-to-target.js": {
+    "@stylistic/max-len": {
+      "count": 39
+    }
+  },
+  "graph/traversal/DFS/allPathsStoD2.js": {
+    "@stylistic/max-len": {
+      "count": 84
+    }
+  },
+  "graph/traversal/DFS/austronaut-pair.js": {
+    "@stylistic/max-len": {
+      "count": 60
+    }
+  },
+  "graph/traversal/DFS/coloring-a-border.js": {
+    "@stylistic/max-len": {
+      "count": 76
+    }
+  },
+  "graph/traversal/DFS/course-schedule.js": {
+    "@stylistic/max-len": {
+      "count": 52
+    }
+  },
+  "graph/traversal/DFS/detect-cycle-directed.js": {
+    "@stylistic/max-len": {
+      "count": 52
+    }
+  },
+  "graph/traversal/DFS/detect-cycle-grid.js": {
+    "@stylistic/max-len": {
+      "count": 86
+    }
+  },
+  "graph/traversal/DFS/detect-cylce.js": {
+    "@stylistic/max-len": {
+      "count": 45
+    }
+  },
+  "graph/traversal/DFS/dfs-recursion.js": {
+    "@stylistic/max-len": {
+      "count": 64
+    }
+  },
+  "graph/traversal/DFS/dfs.js": {
+    "@stylistic/max-len": {
+      "count": 52
+    }
+  },
+  "graph/traversal/DFS/find-closest-node-to-given-two-nodes.js": {
+    "@stylistic/max-len": {
+      "count": 56
+    }
+  },
+  "graph/traversal/DFS/is-bipartite-dfs.js": {
+    "@stylistic/max-len": {
+      "count": 40
+    }
+  },
+  "graph/traversal/DFS/island-perimeter.js": {
+    "@stylistic/max-len": {
+      "count": 46
+    }
+  },
+  "graph/traversal/DFS/keys-and-rooms.js": {
+    "@stylistic/max-len": {
+      "count": 42
+    }
+  },
+  "graph/traversal/DFS/level-of-node.js": {
+    "@stylistic/max-len": {
+      "count": 56
+    }
+  },
+  "graph/traversal/DFS/max-area-of-island-dfs.js": {
+    "@stylistic/max-len": {
+      "count": 48
+    }
+  },
+  "graph/traversal/DFS/minimum-fuel-cost-to-report-to-the-capital.js": {
+    "@stylistic/max-len": {
+      "count": 41
+    }
+  },
+  "graph/traversal/DFS/minimum-score-of-a-path-between-two-cities.js": {
+    "@stylistic/max-len": {
+      "count": 42
+    }
+  },
+  "graph/traversal/DFS/number-of-closed-islands.js": {
+    "@stylistic/max-len": {
+      "count": 58
+    }
+  },
+  "graph/traversal/DFS/number-of-enclaves.js": {
+    "@stylistic/max-len": {
+      "count": 68
+    }
+  },
+  "graph/traversal/DFS/number-of-islands-dfs.js": {
+    "@stylistic/max-len": {
+      "count": 87
+    }
+  },
+  "graph/traversal/TODO-count-unreachable.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/traversal/TODO-minimum-cost-path-with-edge-reversals.js": {
+    "@stylistic/max-len": {
+      "count": 32
+    }
+  },
+  "graph/traversal/checking-existence-of-edge-length-limited-paths.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/traversal/flood-fill/flood-fill-dfs.js": {
+    "@stylistic/max-len": {
+      "count": 69
+    }
+  },
+  "graph/traversal/todo-longest-cycle-in-a-directed-graph.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/tree/BST/find-mode-in-binary-search-tree.js": {
+    "@stylistic/max-len": {
+      "count": 31
+    }
+  },
+  "graph/tree/BST/merge-bsts-to-create-single-bst.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/tree/maximum-width-of-binary-tree.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/tree/number-of-ways-to-reconstruct-a-tree.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "graph/tree/reachable-nodes-with-restrictions.js": {
+    "@stylistic/max-len": {
+      "count": 71
+    }
+  },
+  "graph/tree/tree-dfs/count-valid-paths-in-a-tree.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "greedy/array-partition.js": {
+    "@stylistic/max-len": {
+      "count": 66
+    }
+  },
+  "greedy/buy-two-chocolates.js": {
+    "@stylistic/max-len": {
+      "count": 48
+    }
+  },
+  "greedy/minimize-maximum-pair-sum-in-array.js": {
+    "@stylistic/max-len": {
+      "count": 79
+    }
+  },
+  "hashmap/majority-element-i.js": {
+    "@stylistic/max-len": {
+      "count": 49
+    }
+  },
+  "hashmap/majority-element-ii.js": {
+    "@stylistic/max-len": {
+      "count": 27
+    }
+  },
+  "hashmap/unique-morse-code-words.js": {
+    "@stylistic/max-len": {
+      "count": 42
+    }
+  },
+  "heap/heap.js": {
+    "@stylistic/max-len": {
+      "count": 112
+    }
+  },
+  "heap/kth-largest-element-in-an-array.js": {
+    "@stylistic/max-len": {
+      "count": 102
+    }
+  },
+  "heap/last-stone-weight.js": {
+    "@stylistic/max-len": {
+      "count": 44
+    }
+  },
+  "heap/minimum-pair-removal-to-sort-array-i.js": {
+    "@stylistic/max-len": {
+      "count": 75
+    }
+  },
+  "heap/minimum-pair-removal-to-sort-array-ii.js": {
+    "@stylistic/max-len": {
+      "count": 54
+    }
+  },
+  "heap/top-k-frequent-elements.js": {
+    "@stylistic/max-len": {
+      "count": 102
+    }
+  },
+  "index.js": {
+    "@stylistic/max-len": {
+      "count": 48
+    }
+  },
+  "maths/sieve-of-eratosthenes.js": {
+    "@stylistic/max-len": {
+      "count": 43
+    }
+  },
+  "query/fenwick.js": {
+    "@stylistic/max-len": {
+      "count": 34
+    }
+  },
+  "server.js": {
+    "@stylistic/max-len": {
+      "count": 9
+    }
+  },
+  "sliding-window/check-if-a-string-contains-all-binary-codes-of-size-k.js": {
+    "@stylistic/max-len": {
+      "count": 70
+    }
+  },
+  "sliding-window/count-the-number-of-good-subarrays.js": {
+    "@stylistic/max-len": {
+      "count": 107
+    }
+  },
+  "sliding-window/find-all-anagrams-in-a-string.js": {
+    "@stylistic/max-len": {
+      "count": 89
+    }
+  },
+  "sliding-window/maximum-average-subarray-i.js": {
+    "@stylistic/max-len": {
+      "count": 62
+    }
+  },
+  "sliding-window/maximum-points-you-can-obtain-from-cards.js": {
+    "@stylistic/max-len": {
+      "count": 73
+    }
+  },
+  "sliding-window/maximum-sum-of-distinct-subarrays-with-length-k.js": {
+    "@stylistic/max-len": {
+      "count": 59
+    }
+  },
+  "sliding-window/minimum-difference-between-highest-and-lowest-of-k-scores.js": {
+    "@stylistic/max-len": {
+      "count": 39
+    }
+  },
+  "sliding-window/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold.js": {
+    "@stylistic/max-len": {
+      "count": 62
+    }
+  },
+  "sliding-window/permutation-in-string.js": {
+    "@stylistic/max-len": {
+      "count": 107
+    }
+  },
+  "sliding-window/sliding-subarray-beauty.js": {
+    "@stylistic/max-len": {
+      "count": 110
+    }
+  },
+  "sliding-window/sliding-window-maximum.js": {
+    "@stylistic/max-len": {
+      "count": 86
+    }
+  },
+  "sliding-window/substrings-of-size-three-with-distinct-characters.js": {
+    "@stylistic/max-len": {
+      "count": 74
+    },
+    "no-irregular-whitespace": {
+      "count": 1
+    }
+  },
+  "sliding-window/variable/TODO-maximum-average-subarray-ii.js": {
+    "@stylistic/max-len": {
+      "count": 49
+    }
+  },
+  "sliding-window/variable/find-the-longest-semi-repetitive-substring.js": {
+    "@stylistic/max-len": {
+      "count": 105
+    }
+  },
+  "sliding-window/variable/minimum-window-substring.js": {
+    "@stylistic/max-len": {
+      "count": 100
+    }
+  },
+  "stack-queue/queue/basic-queue.js": {
+    "@stylistic/max-len": {
+      "count": 49
+    }
+  },
+  "stack-queue/queue/moving-average-from-data-stream.js": {
+    "@stylistic/max-len": {
+      "count": 70
+    }
+  },
+  "stack-queue/stack/monotonic-stack/TO-DO-beautiful-towers-i.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "stack-queue/stack/monotonic-stack/beautiful-towers-ii.js": {
+    "@stylistic/max-len": {
+      "count": 1
+    }
+  },
+  "tree/unique-binary-search-tree.js": {
+    "@stylistic/max-len": {
+      "count": 4
+    }
+  }
+}

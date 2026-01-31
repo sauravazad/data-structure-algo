@@ -34,16 +34,15 @@ s and p consist of lowercase English letters
 
 ------------------------------------------------------------------------------------
 
-
 */
 const isObjectEqual = (a, b) => {
   let result = true
   const lenA = Object.keys(a).length
   const lenB = Object.keys(a).length
-  if(lenA === lenB) {
+  if (lenA === lenB) {
     Object.keys(a).forEach((key) => {
       // check if the key exist in both object and its value are equal
-      if(a[key] !== b[key]) result = false
+      if (a[key] !== b[key]) result = false
     })
   } else {
     result = false
@@ -52,59 +51,58 @@ const isObjectEqual = (a, b) => {
 }
 
 /**
- Intuition: 
- Time Complexity: 
+ Intuition:
+ Time Complexity:
  Space Complexity:
- Notes: 
+ Notes:
  */
-var findAnagrams = function(s, p) {
-  let ans = []
+const findAnagrams = function (s, p) {
+  const ans = []
   const windowSize = p.length
   // create a frequency map of character for p
   const findMap = {}
-  for (let i = 0 ; i < p.length; i++) {
-    if(findMap[p[i]] === undefined) findMap[p[i]] = 0
+  for (let i = 0; i < p.length; i++) {
+    if (findMap[p[i]] === undefined) findMap[p[i]] = 0
     findMap[p[i]] += 1
   }
-  
-  let windowMap = {}
+
+  const windowMap = {}
   let left = 0
-  for(let right = 0; right < s.length; right++) {
+  for (let right = 0; right < s.length; right++) {
     // set the frequency of the current window element
-    if(windowMap[s[right]] === undefined) windowMap[s[right]] = 0
+    if (windowMap[s[right]] === undefined) windowMap[s[right]] = 0
     windowMap[s[right]] += 1
     // we have the correct size
-    if (right - left  + 1 === windowSize) {
+    if (right - left + 1 === windowSize) {
       // check the current window elements have the same frequency as the p hash map
-      if(isObjectEqual(findMap, windowMap)) ans.push(left)
+      if (isObjectEqual(findMap, windowMap)) ans.push(left)
       // move the left pointer and decrease the frequency
       windowMap[s[left]] -= 1
-      if(windowMap[s[left]] == 0) delete windowMap[s[left]]
+      if (windowMap[s[left]] == 0) delete windowMap[s[left]]
       left++
     }
-  } 
-    return ans
-};
+  }
+  return ans
+}
 
 // Driver code
- 
 
-var main = function () {
+const main = function () {
   const fn = findAnagrams
   const input = [
-    ["cbaebabacd", "abc"],
-    ["abab", "ab"]
+    ['cbaebabacd', 'abc'],
+    ['abab', 'ab']
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

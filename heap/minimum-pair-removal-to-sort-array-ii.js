@@ -46,40 +46,38 @@ Constraints:
     1 <= nums.length <= 105
     -109 <= nums[i] <= 109
 
-
 ------------------------------------------------------------------------------------
 
 */
 
 /**
- Intuition: 
- Time Complexity: 
+ Intuition:
+ Time Complexity:
  Space Complexity:
- Notes: 
+ Notes:
  */
-var minimumPairRemoval = function() {
-    
-};
+const minimumPairRemoval = function () {
+
+}
 
 // Driver code
- 
 
-var main = function () {
+const main = function () {
   const fn = minimumPairRemoval
   const input = [
-    [5,2,3,1],
-    [1,2,2]
+    [5, 2, 3, 1],
+    [1, 2, 2]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

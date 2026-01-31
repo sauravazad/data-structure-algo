@@ -26,26 +26,26 @@ const lbsLength = (numbers) => {
   // calculate LIS DP Array from the start
   for (let i = 0; i < numbers.length; i++) {
     for (let j = 0; j < i; j++) {
-      //If we find that numbers[j] < numbers[i], we may have found a longer increasing subsequence at index i.
+      // If we find that numbers[j] < numbers[i], we may have found a longer increasing subsequence at index i.
       if (numbers[j] < numbers[i]) {
-        dpStart[i] = Math.max(dpStart[i], dpStart[j]+1);
+        dpStart[i] = Math.max(dpStart[i], dpStart[j] + 1)
       }
     }
   }
 
   // calculate LIS DP Array  from the end
 
-  for (let i = numbers.length -1; i >= 0; i--) {
+  for (let i = numbers.length - 1; i >= 0; i--) {
     for (let j = numbers.length - 1; j > i; j--) {
-      //If we find that numbers[j] < numbers[i], we may have found a longer increasing subsequence at index i.
+      // If we find that numbers[j] < numbers[i], we may have found a longer increasing subsequence at index i.
       if (numbers[j] < numbers[i]) {
-        dpEnd[i] = Math.max(dpEnd[i], dpEnd[j]+1);
+        dpEnd[i] = Math.max(dpEnd[i], dpEnd[j] + 1)
       }
     }
   }
   // calculate the bitonic array
   let max = -Infinity
-  for(let i =0; i < numbers.length; i++) {
+  for (let i = 0; i < numbers.length; i++) {
     bitonicDP[i] = dpStart[i] + dpEnd[i] - 1 // -1 as the current element will be included in both the LIS DP array
     max = Math.max(max, bitonicDP[i])
   }
@@ -53,32 +53,32 @@ const lbsLength = (numbers) => {
 }
 
 // Driver code
-function main() {
-	inputs = [
+function main () {
+  inputs = [
     // [1,11,2,10,4,5,2,1],
-    [10], [1, 8], [2, 4, 1], [6, 5, 3, 7, 10, 1, 2], [1, 4, 9, 2, 16, 20]];
+    [10], [1, 8], [2, 4, 1], [6, 5, 3, 7, 10, 1, 2], [1, 4, 9, 2, 16, 20]]
 
-	// You can uncomment the lines below and check how this recursive solution causes a time-out
-	inputs.push([23, 11, 12, 10, 15, 12, 6, 15, 18, 4, 14, 2, 13, 25,
-	             27, 21, 2, 17, 18, 30, 22, 25, 10, 27, 10, 22, 21,
-	             24, 26, 12, 26, 12, 3, 16, 4, 20, 18, 1, 5, 12, 10,
-	             1, 14, 21, 15, 17, 21, 18, 13, 30, 20, 10, 5, 16, 9,
-	             4, 25, 10, 8, 15, 2, 1, 13, 9, 12, 13, 6, 28, 6, 26,
-	             8, 20, 29, 9, 5, 14, 13, 30, 7, 3, 2, 24, 28, 21, 7,
-	             19, 14, 22, 28, 2, 20, 8, 6, 27, 12, 8, 27, 2, 27,
-	             30, 8, 23, 16, 27, 25, 3, 1, 3, 5, 18, 2, 13, 18, 28,
-	             2, 25, 20, 5, 11, 2, 28, 15, 15, 12, 25, 24, 17, 30,
-	             17, 7, 18, 23, 13, 4, 4, 23, 23, 18, 16, 18, 14, 11,
-	             26, 26, 22, 21, 23, 24, 24, 25, 20, 28, 18, 17, 21,
-	             14, 16, 8, 19, 23, 26, 24, 28, 18, 26, 9, 22, 14, 15,
-	             1, 11, 23, 20, 16, 4, 16, 5, 30, 19, 18, 6, 14, 23,
-	             2, 1, 22, 29, 3, 29, 22, 30, 10, 30, 12, 17, 3, 12,
-	             22, 8, 22]);
+  // You can uncomment the lines below and check how this recursive solution causes a time-out
+  inputs.push([23, 11, 12, 10, 15, 12, 6, 15, 18, 4, 14, 2, 13, 25,
+    27, 21, 2, 17, 18, 30, 22, 25, 10, 27, 10, 22, 21,
+    24, 26, 12, 26, 12, 3, 16, 4, 20, 18, 1, 5, 12, 10,
+    1, 14, 21, 15, 17, 21, 18, 13, 30, 20, 10, 5, 16, 9,
+    4, 25, 10, 8, 15, 2, 1, 13, 9, 12, 13, 6, 28, 6, 26,
+    8, 20, 29, 9, 5, 14, 13, 30, 7, 3, 2, 24, 28, 21, 7,
+    19, 14, 22, 28, 2, 20, 8, 6, 27, 12, 8, 27, 2, 27,
+    30, 8, 23, 16, 27, 25, 3, 1, 3, 5, 18, 2, 13, 18, 28,
+    2, 25, 20, 5, 11, 2, 28, 15, 15, 12, 25, 24, 17, 30,
+    17, 7, 18, 23, 13, 4, 4, 23, 23, 18, 16, 18, 14, 11,
+    26, 26, 22, 21, 23, 24, 24, 25, 20, 28, 18, 17, 21,
+    14, 16, 8, 19, 23, 26, 24, 28, 18, 26, 9, 22, 14, 15,
+    1, 11, 23, 20, 16, 4, 16, 5, 30, 19, 18, 6, 14, 23,
+    2, 1, 22, 29, 3, 29, 22, 30, 10, 30, 12, 17, 3, 12,
+    22, 8, 22])
 
-	for (let i = 0; i < inputs.length; i++) {
-		console.log(i + 1 + ".\tnums:", inputs[i], "\n\n\tThe length of the longest bitonic subsequence is:", lbsLength(inputs[i]));
-		console.log("-".repeat(100));
-	}
+  for (let i = 0; i < inputs.length; i++) {
+    console.log(i + 1 + '.\tnums:', inputs[i], '\n\n\tThe length of the longest bitonic subsequence is:', lbsLength(inputs[i]))
+    console.log('-'.repeat(100))
+  }
 }
 
-main();
+main()

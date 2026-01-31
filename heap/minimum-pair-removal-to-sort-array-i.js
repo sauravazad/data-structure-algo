@@ -37,8 +37,6 @@ Explanation:
 
 The array nums is already sorted.
 
-
-
 ------------------------------------------------------------------------------------
 Input:
 
@@ -53,56 +51,55 @@ Constraints:
 */
 
 /**
- Intuition:  the no of element in the array is at most 50, 
+ Intuition:  the no of element in the array is at most 50,
  so we can simply run a loop while the numbers are not in ascending order and find the pair on each iteration to replace with its sum
- Time Complexity: 
+ Time Complexity:
  Space Complexity:
- Notes: 
+ Notes:
  */
-var minimumPairRemoval = function(nums) {
-    let count = 0
-    while(nums.length) { // infinite loop 
-      let isAscending = true
-      let minSum = Number.MAX_SAFE_INTEGER
-      let targetIndex = -1
-      for(let i = 0 ; i < nums.length - 1; i++) {
-        const sum = nums[i] + nums[i+1]
-        if(nums[i] > nums[i+1]) isAscending = false
+const minimumPairRemoval = function (nums) {
+  let count = 0
+  while (nums.length) { // infinite loop
+    let isAscending = true
+    let minSum = Number.MAX_SAFE_INTEGER
+    let targetIndex = -1
+    for (let i = 0; i < nums.length - 1; i++) {
+      const sum = nums[i] + nums[i + 1]
+      if (nums[i] > nums[i + 1]) isAscending = false
 
-        // check if the current sum is min
-        if(sum < minSum) {
-          minSum = sum
-          targetIndex = i
-        }
+      // check if the current sum is min
+      if (sum < minSum) {
+        minSum = sum
+        targetIndex = i
       }
-      if (isAscending) break
-      // increment the counter on every inner loop completion and replace the pair with the min
-      count++
-      nums[targetIndex] = minSum
-      nums.splice(targetIndex +1 , 1) // remove the next element of target index 
     }
-    return count
-};
+    if (isAscending) break
+    // increment the counter on every inner loop completion and replace the pair with the min
+    count++
+    nums[targetIndex] = minSum
+    nums.splice(targetIndex + 1, 1) // remove the next element of target index
+  }
+  return count
+}
 
 // Driver code
- 
 
-var main = function () {
+const main = function () {
   const fn = minimumPairRemoval
   const input = [
-    [5,2,3,1],
-    [1,2,2]
+    [5, 2, 3, 1],
+    [1, 2, 2]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

@@ -10,25 +10,24 @@ Here coloring of a graph means the assignment of colors to all vertices. Print 1
 const isSafe = (i, j, graph, V, color) => {
   // check if we can assign color j to node i
   // no neighbor should have the same color
-  for(let k = 0; k < V; k++) {
-    if(graph[i][k] == 1 && color[k] == j) return false
+  for (let k = 0; k < V; k++) {
+    if (graph[i][k] == 1 && color[k] == j) return false
   }
   return true
 }
 
 const fillColorUtility = (graph, m, color, V, i) => {
   // console.info(`fillColorUtility => m: ${m} Vertexes : ${V}, index: ${i}`, `color: ${color}`)
-  if(i == V) return true
-  for(let j = 0; j < m; j++) {
-    if(isSafe(i, j, graph, V, color)) {
+  if (i == V) return true
+  for (let j = 0; j < m; j++) {
+    if (isSafe(i, j, graph, V, color)) {
       color[i] = j
-      if(fillColorUtility(graph, m, color, V, i+1)) {
+      if (fillColorUtility(graph, m, color, V, i + 1)) {
         return true
-      } else  {
+      } else {
         // reset the color if it was wrong
         color[i] = -1
       }
-
     }
   }
   return false
@@ -40,11 +39,11 @@ const graphColoring = (m, grid) => {
 }
 
 // Driver code
-var main = function () {
+const main = function () {
   const fn = graphColoring
   const input = [
-    [3, [[ 0, 1, 1, 1 ],[ 1, 0, 1, 0 ],[ 1, 1, 0, 1 ],[ 1, 0, 1, 0 ]] ], // true
-    [3, [[ 1, 1, 1, 1 ],[ 1, 1, 1, 1 ],[ 1, 1, 1, 1 ],[ 1, 1, 1, 1 ]] ] // false
+    [3, [[0, 1, 1, 1], [1, 0, 1, 0], [1, 1, 0, 1], [1, 0, 1, 0]]], // true
+    [3, [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]]] // false
   ]
   /**
    *  Fill the time complexity for each function
@@ -53,12 +52,12 @@ var main = function () {
   Auxiliary Space: O(V). The recursive Stack of the graph coloring function will require O(V) space.
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array:", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

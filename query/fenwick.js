@@ -1,11 +1,10 @@
-
 class Fenwick {
-  constructor(n) {
+  constructor (n) {
     this.size = n
     this.fn = Array(n + 1).fill(0)
   }
 
-  add(i, val) {
+  add (i, val) {
     i++
     while (i < this.fn.length) {
       this.fn[i] += val
@@ -28,12 +27,11 @@ class Fenwick {
   }
 }
 
-
 // Driver code
-var main = function () {
+const main = function () {
   const input = [1, 2, 3, 4, 5, 6]
   const fenwick = new Fenwick(input.length)
-  for (let [i, n] of input.entries()) {
+  for (const [i, n] of input.entries()) {
     fenwick.add(i, n)
     console.log(fenwick)
   }
@@ -41,4 +39,4 @@ var main = function () {
   console.log(fenwick.query(0, 5))
 }
 
-main();
+main()

@@ -16,34 +16,33 @@ const minDeletions = (nums) => {
 }
 
 const getLIS = (nums) => {
-  let dp = new Array(nums.length).fill(1);
-    let longest = 1;
-    for(let i = 1; i < nums.length; i++) {
-      for(let j = 0; j < i; j++) {
-        //If we find that nums[j] < nums[i], we may have found a longer increasing subsequence at index i.
-        if(nums[j] < nums[i]) {
-          dp[i] = Math.max(dp[i], dp[j] + 1)
-          longest = Math.max(dp[i])
-        }
+  const dp = new Array(nums.length).fill(1)
+  let longest = 1
+  for (let i = 1; i < nums.length; i++) {
+    for (let j = 0; j < i; j++) {
+      // If we find that nums[j] < nums[i], we may have found a longer increasing subsequence at index i.
+      if (nums[j] < nums[i]) {
+        dp[i] = Math.max(dp[i], dp[j] + 1)
+        longest = Math.max(dp[i])
       }
     }
-    return longest
+  }
+  return longest
 }
 
 // Driver code
-var main = function() {
-  var lists = [
-      [1,1,2],
-      [1, 3, 6, 7, 9, 4, 10, 5, 6],
-      [10, 9, 2, 5, 3, 7, 101, 18],
-      [30, 40, 2, 5, 1, 7, 45, 50, 8],
-      [0, 1, 0, 3, 2, 3],
-      [3, 2],
-      [6, 9, 8, 2, 3, 5, 1, 4, 7],
-      [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15],
-      [9, 2, 5, 3, 6, 14, 11, 7, 9, 5, 13, 3, 15, 0, 8, 4, 1, 9, 5, 13, 3, 11, 7, 15, 0, 10, 6, 14, 9, 2, 5, 3, 2, 10, 6, 10, 6, 5, 13, 3, 11, 7, 15, 3, 11, 7, 15]
-  ];
-
+const main = function () {
+  const lists = [
+    [1, 1, 2],
+    [1, 3, 6, 7, 9, 4, 10, 5, 6],
+    [10, 9, 2, 5, 3, 7, 101, 18],
+    [30, 40, 2, 5, 1, 7, 45, 50, 8],
+    [0, 1, 0, 3, 2, 3],
+    [3, 2],
+    [6, 9, 8, 2, 3, 5, 1, 4, 7],
+    [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15],
+    [9, 2, 5, 3, 6, 14, 11, 7, 9, 5, 13, 3, 15, 0, 8, 4, 1, 9, 5, 13, 3, 11, 7, 15, 0, 10, 6, 14, 9, 2, 5, 3, 2, 10, 6, 10, 6, 5, 13, 3, 11, 7, 15, 3, 11, 7, 15]
+  ]
 
   // You can uncomment the line below and check how this recursive solution causes a time-out
 
@@ -56,12 +55,11 @@ var main = function() {
   //    54, 7, 56, 5, 2, 63, 88, 58, 60, 95, 54, 7, 56, 5, 2, 63, 88, 58, 60, 95, 54, 7,
   //    56, 5, 2, 63, 88, 58, 60, 95]);
 
-
-  for (var i = 0; i < lists.length; i++) {
-      console.log((i + 1) + ". Input array: [" + lists[i].join(", ") + "]");
-      console.log("Minimum deletions required: " + minDeletions(lists[i]));
-      console.log("-".repeat(100));
+  for (let i = 0; i < lists.length; i++) {
+    console.log((i + 1) + '. Input array: [' + lists[i].join(', ') + ']')
+    console.log('Minimum deletions required: ' + minDeletions(lists[i]))
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

@@ -10,40 +10,40 @@ Return the minimum degree of a connected trio in the graph, or -1 if the graph h
 
 const createGraphUndirected = (N, edges) => {
   const graph = {}
-  for (let e of edges) {
+  for (const e of edges) {
     graph[e[0]] ? graph[e[0]].add(e[1]) : graph[e[0]] = new Set([e[1]])
     graph[e[1]] ? graph[e[1]].add(e[0]) : graph[e[1]] = new Set([e[0]])
   }
   return graph
 }
 
-const  minTrioDegree2  = function(n, edges) {
+const minTrioDegree2 = function (n, edges) {
   // time Complexity = O(n^3)
   const graph = createGraph(n, edges)
   console.info(graph)
   let ans = Number.MAX_SAFE_INTEGER
-  for(let e1 of Object.keys(graph)) {
-    for(let e2 of graph[e1]) {
-      for(let e3 of graph[e1]) {
-        if(e3 in graph[e2] && e2 != e3) {
+  for (const e1 of Object.keys(graph)) {
+    for (const e2 of graph[e1]) {
+      for (const e3 of graph[e1]) {
+        if (e3 in graph[e2] && e2 != e3) {
           ans = Math.min(ans, graph[e1].length + graph[e2].length + graph[e3].length - 6)
         }
       }
     }
   }
   return ans < Number.MAX_SAFE_INTEGER ? ans : -1
-};
+}
 
 const minTrioDegree = (N, edges) => {
   const graph = createGraph(N, edges)
   let ans = Number.MAX_SAFE_INTEGER
   // console.info(graph)
-  for(let edge of edges) {//n
+  for (const edge of edges) { // n
     const [node1, node2] = edge
     // iterate through neighbor of the node1
-    for (let vertex of graph[node1]) {
+    for (const vertex of graph[node1]) {
       // check if there is path for vertex in node2
-      if(graph[node2].has(vertex)) {
+      if (graph[node2].has(vertex)) {
         // it is a trio
         const degreeOfTrio = graph[node1].size + graph[node2].size + graph[vertex].size - 6
         // console.info(`Found a trio`, node1, node2, vertex, degreeOfTrio)
@@ -55,22 +55,22 @@ const minTrioDegree = (N, edges) => {
 }
 
 // Driver code
-var main = function () {
+const main = function () {
   const fn = minTrioDegree
   const input = [
-    [6, [[1,2],[1,3],[3,2],[4,1],[5,2],[3,6]]],
-    [7, [[1,3],[4,1],[4,3],[2,5],[5,6],[6,7],[7,5],[2,6]]]
+    [6, [[1, 2], [1, 3], [3, 2], [4, 1], [5, 2], [3, 6]]],
+    [7, [[1, 3], [4, 1], [4, 3], [2, 5], [5, 6], [6, 7], [7, 5], [2, 6]]]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array:", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

@@ -1,25 +1,24 @@
 const binaryInsert = (nums, item) => {
   let left = 0
   let right = nums.length
-  while(right >= left ) {
-    let insertIndex = Math.floor(left + (right - left) / 2)
-    if(item === nums[insertIndex]) {
+  while (right >= left) {
+    const insertIndex = Math.floor(left + (right - left) / 2)
+    if (item === nums[insertIndex]) {
       left = insertIndex
-      break;
-    } else  if(item < nums[insertIndex] ) {
-      left = insertIndex +1
+      break
+    } else if (item < nums[insertIndex]) {
+      left = insertIndex + 1
     } else {
-      right = insertIndex -1
+      right = insertIndex - 1
     }
   }
   // console.log(`Inserting at index ${left}`)
-  nums.splice( left, 0, item)
+  nums.splice(left, 0, item)
   return nums
 }
 
-
 // Driver code
-var main = function () {
+const main = function () {
   const input = []
   /**
    *  Fill the time complexity for each function
@@ -32,4 +31,4 @@ var main = function () {
   console.info(input)
 }
 
-main();
+main()

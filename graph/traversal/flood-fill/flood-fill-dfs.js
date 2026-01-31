@@ -8,15 +8,15 @@ const DFSHelper = (image, i, j, color) => {
   stack.push([i, j])
   visited[i][j] = true
 
-  while(stack.length) {
+  while (stack.length) {
     const current = stack.pop()
     const [x, y] = current
     image[x][y] = color
     // iterate through the paths and look for neighbors
-    for(let p of paths ) {
+    for (const p of paths) {
       const new_x = x + p[0]
       const new_y = y + p[1]
-      if(isValid(new_x, new_y, originalColor)&& !visited[new_x][new_y]) {
+      if (isValid(new_x, new_y, originalColor) && !visited[new_x][new_y]) {
         // console.info('In here', new_x, new_y)
 
         visited[new_x][new_y] = true
@@ -24,27 +24,25 @@ const DFSHelper = (image, i, j, color) => {
       }
     }
   }
-
 }
 
-
-var floodFill = function(image, row, col, color) {
+const floodFill = function (image, row, col, color) {
   const r = image.length
   const c = col.length
   const visited = Array(r).fill().map(() => Array(c).fill(false))
   const paths = [
     [1, 0],
-    [-1,0],
+    [-1, 0],
     [0, 1],
-    [0,-1],
+    [0, -1]
   ]
   const isValid = (x, y, color) => {
-    if(x< 0 || y < 0 || x >=r || y >= c) return false
+    if (x < 0 || y < 0 || x >= r || y >= c) return false
     return (image[x][y] == color)
   }
 
-  const DFSHelperRec = (image,row, col, color, visited, actualColor) => {
-    if(isValid(row, col, actualColor) && !visited[row][col]) {
+  const DFSHelperRec = (image, row, col, color, visited, actualColor) => {
+    if (isValid(row, col, actualColor) && !visited[row][col]) {
       visited[row][col] = true
       image[row][col] = color
       DFSHelperRec(image, row + 1, col + 0, color, visited, actualColor)
@@ -57,26 +55,26 @@ var floodFill = function(image, row, col, color) {
   // console.info('calling DFS with param', row, col, color)
   // DFSHelper(image,row, col, color)
   const actualColor = image[row][col]
-  DFSHelperRec(image,row, col, color, visited, actualColor)
+  DFSHelperRec(image, row, col, color, visited, actualColor)
   return image
-};
+}
 // Driver code
-var main = function () {
+const main = function () {
   const fn = floodFill
   const input = [
-    [[[1,1,1],[1,1,0],[1,0,1]], 1,1,2],
-    [[[0,0,0],[0,0,0]], 0,0,0]
+    [[[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2],
+    [[[0, 0, 0], [0, 0, 0]], 0, 0, 0]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array:", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

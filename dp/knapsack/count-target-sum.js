@@ -20,18 +20,18 @@ No.	   nums	       targetSum	Output
 2	  {1, 2, 7, 4, 5}	  9	       2
 3	  {1, 2, 3, 7}	    6	       1
 */
-function countSubsetSum(input, target) {
-  let sum = 0;
+function countSubsetSum (input, target) {
+  const sum = 0
   // const dp = [...Array(input.length)].map(() => Array(target + 1).fill(-1));
   // const result = countSubsetSumRec(input, target, 0, sum)
   // const result = countSubsetSumRec2(input, target, input.length)
 
   // const result = countSubsetSumRecMemo(input, target, 0, dp);
-  const dp = [...Array(input.length)].map(() => Array(target + 1).fill(0));
-  const result = countSubsetSum2D(input, target, dp);
+  const dp = [...Array(input.length)].map(() => Array(target + 1).fill(0))
+  const result = countSubsetSum2D(input, target, dp)
 
   // console.info(dp)
-  return result;
+  return result
 }
 
 /**
@@ -42,21 +42,21 @@ function countSubsetSum(input, target) {
   if index === input.length // as we have reached the last element but have not found the sum
     return 0
  */
-function countSubsetSumRec(input, target, index, sum) {
-  if (sum === target) return 1;
-  if (index === input.length) return 0;
+function countSubsetSumRec (input, target, index, sum) {
+  if (sum === target) return 1
+  if (index === input.length) return 0
 
-  const nextIndex = index + 1;
+  const nextIndex = index + 1
   // include the current element
   const included = countSubsetSumRec(
     input,
     target,
     nextIndex,
     sum + input[index]
-  );
+  )
   // exclude the element
-  const excluded = countSubsetSumRec(input, target, nextIndex, sum);
-  return included + excluded;
+  const excluded = countSubsetSumRec(input, target, nextIndex, sum)
+  return included + excluded
 }
 
 /**
@@ -67,96 +67,93 @@ function countSubsetSumRec(input, target, index, sum) {
   if index === -1 // as we have reached the last element but have not found the sum
     return 0
  */
-function countSubsetSumRec2(input, target, index) {
-  if (target === 0) return 1;
-  if (index < 0) return 0;
+function countSubsetSumRec2 (input, target, index) {
+  if (target === 0) return 1
+  if (index < 0) return 0
 
-  const nextIndex = index - 1;
+  const nextIndex = index - 1
   // include the current element
-  const included = countSubsetSumRec2(input, target - input[index], nextIndex);
+  const included = countSubsetSumRec2(input, target - input[index], nextIndex)
   // exclude the element
-  const excluded = countSubsetSumRec2(input, target, nextIndex);
-  return included + excluded;
+  const excluded = countSubsetSumRec2(input, target, nextIndex)
+  return included + excluded
 }
 
-function countSubsetSumRecMemo(input, target, index, dp) {
-  if (target === 0) return 1;
-  if (index >= input.length) return 0;
+function countSubsetSumRecMemo (input, target, index, dp) {
+  if (target === 0) return 1
+  if (index >= input.length) return 0
 
-  if(dp[index][target] == -1) {
-    const nextIndex = index + 1;
+  if (dp[index][target] == -1) {
+    const nextIndex = index + 1
     // include the current element
     let included = 0
-    if(input[index] <= target) included = countSubsetSumRecMemo(input, target - input[index], nextIndex, dp);
+    if (input[index] <= target) included = countSubsetSumRecMemo(input, target - input[index], nextIndex, dp)
 
     // exclude the element
-    const excluded = countSubsetSumRecMemo(input, target, nextIndex, dp);
-    const result = included + excluded;
+    const excluded = countSubsetSumRecMemo(input, target, nextIndex, dp)
+    const result = included + excluded
     dp[index][target] = result
   }
 
   return dp[index][target]
 }
 
-
-
 function countSubsetSum2D (input, target, dp) {
   // base case
   // empty set will result in zero
   // also if the element is zero then also the sum will result in zero
   // ie:  if num[0] === 0 then fill (1 (empty set) + 1 (because 0)) =2
-  if(input[0] === 0) dp[0][0] = 2
+  if (input[0] === 0) dp[0][0] = 2
 
   else {
     dp[0][0] = 1
-    if(input[0] <= target) {
+    if (input[0] <= target) {
       dp[0][input[0]] = 1
     }
   }
 
-  for(let i = 1; i < input.length; i++) {
-      for(let currentTarget = 0; currentTarget <= target ; currentTarget++) {
-        let included = 0
-        if(input[i] <= currentTarget) {
-          included = dp[i-1][currentTarget - input[i]]
-        }
-        excluded = dp[i-1][currentTarget]
-        dp[i][currentTarget] = included + excluded
+  for (let i = 1; i < input.length; i++) {
+    for (let currentTarget = 0; currentTarget <= target; currentTarget++) {
+      let included = 0
+      if (input[i] <= currentTarget) {
+        included = dp[i - 1][currentTarget - input[i]]
       }
+      excluded = dp[i - 1][currentTarget]
+      dp[i][currentTarget] = included + excluded
+    }
   }
-  return dp[input.length -1][target]
-
+  return dp[input.length - 1][target]
 }
-var main = function () {
-  let inputNums = [
-      [1],
-      [11, 33],
-      [4, 2, 3],
-      [1, 4, 2, 3],
-      [1, 2, 7, 4, 5],
-      [1, 2, 3, 7],
-    ],
-    targetSums = [10, 11, 6, 4, 9, 6];
+const main = function () {
+  const inputNums = [
+    [1],
+    [11, 33],
+    [4, 2, 3],
+    [1, 4, 2, 3],
+    [1, 2, 7, 4, 5],
+    [1, 2, 3, 7]
+  ]
+  const targetSums = [10, 11, 6, 4, 9, 6]
 
   // You can uncomment the lines below and check how this recursive solution causes a time-out
 
   inputNums.push([
-      1, 4, 6, 7, 8, 9, 10, 11, 16, 17, 18, 21, 23, 25, 26, 28, 34, 35, 36,
-      38, 39, 40, 41, 42, 44, 47, 50, 51, 54, 55, 61, 62, 63, 65, 69, 71, 72,
-      73, 75, 76, 78, 79, 80, 82, 83, 84, 85, 86, 88, 90, 91, 92, 93, 94, 98,
-      99, 100, 101, 103, 104, 106, 109, 116, 118, 119,
-  ]);
-  targetSums.push(2593);
+    1, 4, 6, 7, 8, 9, 10, 11, 16, 17, 18, 21, 23, 25, 26, 28, 34, 35, 36,
+    38, 39, 40, 41, 42, 44, 47, 50, 51, 54, 55, 61, 62, 63, 65, 69, 71, 72,
+    73, 75, 76, 78, 79, 80, 82, 83, 84, 85, 86, 88, 90, 91, 92, 93, 94, 98,
+    99, 100, 101, 103, 104, 106, 109, 116, 118, 119
+  ])
+  targetSums.push(2593)
 
   for (let i = 0; i < inputNums.length; i++) {
-    console.log(`${i + 1}.\tnums = [` + inputNums[i].join(", ") + "]");
-    console.log("\ttarget sum = ", targetSums[i]);
+    console.log(`${i + 1}.\tnums = [` + inputNums[i].join(', ') + ']')
+    console.log('\ttarget sum = ', targetSums[i])
     console.log(
-      "\tTotal number of subsets whose sum is equal to the target sum = ",
+      '\tTotal number of subsets whose sum is equal to the target sum = ',
       countSubsetSum(inputNums[i], targetSums[i])
-    );
-    console.log("-".repeat(100));
+    )
+    console.log('-'.repeat(100))
   }
-};
+}
 
-main();
+main()

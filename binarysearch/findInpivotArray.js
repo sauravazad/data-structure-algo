@@ -7,7 +7,6 @@ Given the array nums after the possible rotation and an integer target, return t
 
 You must write an algorithm with O(log n) runtime complexity.
 
-
 Example 1:
 
 Input: nums = [4,5,6,7,0,1,2], target = 0
@@ -36,20 +35,20 @@ Constraints:
 function search (nums, target) {
   let left = 0
   let right = nums.length - 1
-  while(left <= right ) {
-    let mid = Math.floor(left + (right - left) / 2)
-    if(nums[mid] === target) {
+  while (left <= right) {
+    const mid = Math.floor(left + (right - left) / 2)
+    if (nums[mid] === target) {
       return mid
-    } else if(nums[mid] >= nums[left]) {
-      if(target >= nums[left] && target <= nums[mid]) {
+    } else if (nums[mid] >= nums[left]) {
+      if (target >= nums[left] && target <= nums[mid]) {
         right = mid - 1
-      } else  {
+      } else {
         left = mid + 1
       }
     } else {
-      if(target >= nums[mid] && target <= nums[right] ) {
+      if (target >= nums[mid] && target <= nums[right]) {
         left = mid + 1
-      } else  {
+      } else {
         right = mid - 1
       }
     }
@@ -57,7 +56,7 @@ function search (nums, target) {
   return -1
 }
 
-console.log(search([4,5,6,7,0,1,2], 0))
-console.log(search([4,5,6,7,0,1,2], 3))
-console.log(search([0, 2, 4,6,8, -100, -50], -100))
-console.log(search([1,3], 1))
+console.log(search([4, 5, 6, 7, 0, 1, 2], 0))
+console.log(search([4, 5, 6, 7, 0, 1, 2], 3))
+console.log(search([0, 2, 4, 6, 8, -100, -50], -100))
+console.log(search([1, 3], 1))

@@ -1,3 +1,17 @@
+.DS_Store
+.idea
+.nyc_output
+.project
+coverage
+node_modules
+dist
+types
+jsdoc
+package-lock.json
+pnpm-lock.yaml
+.bob/
+.bobmodes
+
 # Python-generated files
 __pycache__/
 *.py[oc]

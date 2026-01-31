@@ -38,7 +38,6 @@ Explanation:
     For i = 1, the smallest ans[1] that satisfies ans[1] OR (ans[1] + 1) = 13 is 12, because 12 OR (12 + 1) = 13.
     For i = 2, the smallest ans[2] that satisfies ans[2] OR (ans[2] + 1) = 31 is 15, because 15 OR (15 + 1) = 31.
 
-
 ------------------------------------------------------------------------------------
 Input:
 
@@ -50,47 +49,46 @@ Constraints:
 */
 
 /**
- Intuition: 
- Time Complexity: 
+ Intuition:
+ Time Complexity:
  Space Complexity:
- Notes: 
+ Notes:
  */
-var minBitwiseArray = function (nums) {
-    for (let i = 0; i < nums.length; i++) {
-        let x = nums[i];
-        let res = -1;
-        let d = 1;
-        while ((x & d) !== 0) { // run until we encounter a bit set to zero
-            res = x - d;
-            d <<= 1;
-        }
-        nums[i] = res;
+const minBitwiseArray = function (nums) {
+  for (let i = 0; i < nums.length; i++) {
+    const x = nums[i]
+    let res = -1
+    let d = 1
+    while ((x & d) !== 0) { // run until we encounter a bit set to zero
+      res = x - d
+      d <<= 1
     }
-    return nums;
-};
+    nums[i] = res
+  }
+  return nums
+}
 // Driver code
- 
 
-var main = function () {
+const main = function () {
   const fn = minBitwiseArray
   const input = [
-    [2,3,5,7],
-    [11,13,31]
+    [2, 3, 5, 7],
+    [11, 13, 31]
   ]
   const expected = [
-    [-1,1,4,3],
-    [9,12,15]
+    [-1, 1, 4, 3],
+    [9, 12, 15]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

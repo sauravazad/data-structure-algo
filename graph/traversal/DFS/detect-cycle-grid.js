@@ -7,24 +7,24 @@ const containsCycle = (grid) => {
   const parents = {}
   const paths = [[-1, 0], [1, 0], [0, -1], [0, 1]]
   const isValid = (i, j, val) => {
-    if(i < 0 || j < 0 || i >= r || j >= c) return false
+    if (i < 0 || j < 0 || i >= r || j >= c) return false
     return val == grid[i][j]
   }
   const hasCycle = (i, j, char) => {
     const stack = []
     parents[`${i}-${j}`] = [-1, -1]
-    stack.push([i,j])
+    stack.push([i, j])
     visited[i][j] = true
-    while(stack.length) {
+    while (stack.length) {
       const current = stack.pop()
       const [x, y] = current
 
       // iterate over the paths to generate all the paths
-      for(p of paths) {
+      for (p of paths) {
         const new_x = x + p[0]
         const new_y = y + p[1]
-        if(isValid(new_x, new_y, char)) {
-          if(!visited[new_x][new_y]) {
+        if (isValid(new_x, new_y, char)) {
+          if (!visited[new_x][new_y]) {
             visited[new_x][new_y] = true
             parents[`${new_x}-${new_y}`] = [x, y]
             stack.push([new_x, new_y])
@@ -39,26 +39,25 @@ const containsCycle = (grid) => {
   const hasCycleRec = (i, j, char, parent) => {
     visited[i][j] = true
     parents[`${i}-${j}`] = parent
-    for(let p of paths) {
+    for (const p of paths) {
       const new_x = i + p[0]
       const new_y = j + p[1]
       if (isValid(new_x, new_y, char)) {
-        if(!visited[new_x][new_y]) {
+        if (!visited[new_x][new_y]) {
           const ans = hasCycleRec(new_x, new_y, char, [i, j])
-          if(ans) return true
+          if (ans) return true
         } else if (new_x != parent[0] && new_y != parent[1]) {
           return true
         }
       }
-
     }
     return false
   }
-  for(let i = 0; i < r; i++) {
-    for (let j = 0 ; j < c; j++) {
-      if(!visited[i][j]) {
+  for (let i = 0; i < r; i++) {
+    for (let j = 0; j < c; j++) {
+      if (!visited[i][j]) {
         const and = hasCycle(i, j, grid[i][j], [-1, -1])
-        if(and) return true
+        if (and) return true
       }
     }
   }
@@ -74,8 +73,8 @@ const main = () => {
   console.log('is there a cycle ? ', containsCycle(grid))
 
   grid = [['a', 'b', 'b'],
-          ['b', 'z', 'b'],
-          ['b', 'b', 'a']]
+    ['b', 'z', 'b'],
+    ['b', 'b', 'a']]
   console.log('is there a cycle ? ', containsCycle(grid))
 
   grid = [['b', 'b'], ['b', 'b']]
@@ -86,13 +85,13 @@ const main = () => {
 
   grid = [['b', 'c', 'd', 'e', 'a', 'a', 'a'], ['a', 'a', 'a', 'f', 'a', 'g', 'a'], ['a', 'h', 'a', 'a', 'a', 'i', 'a'], ['a', 'j', 'k', 'l', 'm', 'n', 'a'], ['a', 'a', 'a', 'a', 'a', 'a', 'a']]
   console.log('is there a cycle ? ', containsCycle(grid))
-  console.log('is there a cycle ? ', containsCycle(["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]))
+  console.log('is there a cycle ? ', containsCycle(['1', '1', '0', '0', '0'], ['1', '1', '0', '0', '0'], ['0', '0', '1', '0', '0'], ['0', '0', '0', '1', '1']))
 
   grid = [
-    ["b","a","c"],
-    ["c","a","c"],
-    ["d","d","c"],
-    ["b","c","c"]]
+    ['b', 'a', 'c'],
+    ['c', 'a', 'c'],
+    ['d', 'd', 'c'],
+    ['b', 'c', 'c']]
   console.log('is there a cycle ? ', containsCycle(grid))
 }
 

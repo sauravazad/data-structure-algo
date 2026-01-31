@@ -1,8 +1,8 @@
 // https://leetcode.com/problems/count-vowels-permutation/
 
-const MOD = 10**9 + 7
-var countVowelPermutation = function(n) {
-  const a = 0, e = 1, i = 2 , o = 3, u = 4
+const MOD = 10 ** 9 + 7
+const countVowelPermutation = function (n) {
+  const a = 0; const e = 1; const i = 2; const o = 3; const u = 4
   let vowelsCount = Array(5).fill(1) // base case
 
   // for n > 1
@@ -18,31 +18,31 @@ var countVowelPermutation = function(n) {
   }
 
   return addVModulo(...vowelsCount)
-};
+}
 
 const addVModulo = (...arr) => {
   let sum = 0
-  for( let e of arr) {
+  for (const e of arr) {
     sum += e
     sum %= MOD
   }
   return sum
 }
 // Driver code
-var main = function () {
+const main = function () {
   const fn = countVowelPermutation
-  const input = [1,2, 5]
+  const input = [1, 2, 5]
   const output = [5, 10, 68]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

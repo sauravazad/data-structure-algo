@@ -15,21 +15,21 @@ The sum of the numbers from index le = 1 to ri = 5 is 1 + 2 + 3 + 3 + 4 = 13.
 const buildPrefixSumArray = (numbers) => {
   const prefix = []
   const n = numbers.length
-  for(let i = 0; i < n ; i++ ) {
-    prefix[i] =  (prefix[i -1] || 0)  + numbers[i]
+  for (let i = 0; i < n; i++) {
+    prefix[i] = (prefix[i - 1] || 0) + numbers[i]
   }
   return prefix
 }
 
-var rangeSum = function(nums, n, left, right) {
+const rangeSum = function (nums, n, left, right) {
   const sums = []
   const prefix = buildPrefixSumArray(nums)
   // console.log(prefix)
   // Iterate over the nums array to compute the sub array sums
   let k = 0
-  for(let i = 0 ; i < n ; i++) {
-    for(let j = i; j < n; j++) {
-      sums[k++] = prefix[j] - (prefix[i -1] || 0)
+  for (let i = 0; i < n; i++) {
+    for (let j = i; j < n; j++) {
+      sums[k++] = prefix[j] - (prefix[i - 1] || 0)
       // console.log(`Sub array, [${i},${j}]`, `sum is: ${sums[k-1]}`)
     }
   }
@@ -39,28 +39,28 @@ var rangeSum = function(nums, n, left, right) {
   const subarrayPrefixes = buildPrefixSumArray(sums)
   subarrayPrefixes.unshift(0)
   // process the query
-  const ans = subarrayPrefixes[right] - (subarrayPrefixes[left -1]) //
+  const ans = subarrayPrefixes[right] - (subarrayPrefixes[left - 1]) //
   return ans
-};
+}
 
 // Driver code
-var main = function () {
+const main = function () {
   const input = [
-    [[1,2,3,4], 4, 1,5],
-    [[1,2,3,4], 4, 3,4],
-    [[1,2,3,4], 4, 4,1]
+    [[1, 2, 3, 4], 4, 1, 5],
+    [[1, 2, 3, 4], 4, 3, 4],
+    [[1, 2, 3, 4], 4, 4, 1]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array:", input[i]);
-      var result = rangeSum(...input[i]);
-      console.log("\t Result is",
-                  result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = rangeSum(...input[i])
+    console.log('\t Result is',
+      result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

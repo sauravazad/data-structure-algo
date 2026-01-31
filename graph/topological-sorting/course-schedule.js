@@ -1,11 +1,10 @@
 // https://leetcode.com/problems/course-schedule/
 
-
-var canFinish = function(numCourses, prerequisites) {
+const canFinish = function (numCourses, prerequisites) {
   const graph = Array(numCourses).fill().map(() => Array().fill([]))
   const inDegree = Array(numCourses).fill(0)
 
-  for(let e of prerequisites) {
+  for (const e of prerequisites) {
     graph[e[0]].push(e[1])
     inDegree[e[1]] += 1 // record the in-degree
   }
@@ -22,16 +21,16 @@ var canFinish = function(numCourses, prerequisites) {
 
   // find the nodes with in-degree = 0
 
-  for (let i =0 ; i <inDegree.length; i++ ) {
-    if(inDegree[i] === 0) queue.push(i)
+  for (let i = 0; i < inDegree.length; i++) {
+    if (inDegree[i] === 0) queue.push(i)
   }
 
   // process the queue
-  while(queue.length) {
+  while (queue.length) {
     const current = queue.shift()
     topSortedList.push(current) // push to sorted list
-    for(let e of graph[current]) {
-      if(--inDegree[e] === 0) { // decrement the in degree and compare to zero
+    for (const e of graph[current]) {
+      if (--inDegree[e] === 0) { // decrement the in degree and compare to zero
         queue.push(e)
       }
     }
@@ -40,22 +39,22 @@ var canFinish = function(numCourses, prerequisites) {
   return topSortedList.length === numCourses
 }
 // Driver code
-var main = function () {
+const main = function () {
   const fn = canFinish
   const input = [
-    [2, [[1,0]]],
-    [2, [[1,0],[0,1]]]
+    [2, [[1, 0]]],
+    [2, [[1, 0], [0, 1]]]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

@@ -3,20 +3,20 @@ https://leetcode.com/problems/course-schedule/
 https://leetcode.com/problems/course-schedule-ii => topological sorting
  */
 
-var canFinish = function(numCourses, prerequisites) {
+const canFinish = function (numCourses, prerequisites) {
   const visited = []
   const g = Array(numCourses).fill().map(() => Array().fill([]))
 
   // it is a directed graph
-  for( let e of prerequisites) {
+  for (const e of prerequisites) {
     g[e[0]].push(e[1])
   }
 
   const detectCycle = (source, parent) => {
     visited[source] = 1
     let ans = 0
-    for(let n of g[source]) {
-      if(!visited[n]) {
+    for (const n of g[source]) {
+      if (!visited[n]) {
         ans |= detectCycle(n, source)
       } else if (visited[n] == 1) {
         return 1
@@ -26,22 +26,21 @@ var canFinish = function(numCourses, prerequisites) {
     return ans
   }
   let ans = 0
-  for(let i = 0 ; i < numCourses; i++) {
-    if(!visited[i]) {
+  for (let i = 0; i < numCourses; i++) {
+    if (!visited[i]) {
       const result = detectCycle(i, -1)
       ans |= result
     }
   }
 
   return ans != 1
-
-};
+}
 // Driver code
-var main = function () {
+const main = function () {
   fn = canFinish
   const input = [
-    [2, [[1,0]]],
-    [2, [[1,0],[0,1]]]
+    [2, [[1, 0]]],
+    [2, [[1, 0], [0, 1]]]
   ]
   /**
   Input: numCourses = 2, prerequisites = [[1,0]]
@@ -49,15 +48,14 @@ var main = function () {
   Explanation: There are a total of 2 courses to take.
   To take course 1 you should have finished course 0. So it is possible.
 
-
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array:", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

@@ -1,10 +1,10 @@
 /*
 Problem link : https://leetcode.com/problems/maximum-average-subarray-ii/
 ------------------------------------------------------------------------------------
-Description: 
+Description:
 You are given an integer array nums consisting of n elements, and an integer k.
 
-Find a contiguous subarray whose length is greater than or equal to k that has the maximum average value and return this value. 
+Find a contiguous subarray whose length is greater than or equal to k that has the maximum average value and return this value.
 Any answer with a calculation error less than 10-5 will be accepted.
 
 ------------------------------------------------------------------------------------
@@ -26,7 +26,6 @@ Example 2:
 Input: nums = [5], k = 1
 Output: 5.00000
 
-
 ------------------------------------------------------------------------------------
 Input:
 
@@ -38,34 +37,33 @@ Constraints:
 */
 
 /**
- Intuition: 
- Time Complexity: 
+ Intuition:
+ Time Complexity:
  Space Complexity:
- Notes: 
+ Notes:
  */
-var findMaxAverage = function(nums, k) {
-    
-};
+const findMaxAverage = function (nums, k) {
+
+}
 
 // Driver code
- 
 
-var main = function () {
+const main = function () {
   const fn = findMaxAverage
   const input = [
-    [[1,12,-5,-6,50,3], 4],
+    [[1, 12, -5, -6, 50, 3], 4],
     [[5], 1]
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

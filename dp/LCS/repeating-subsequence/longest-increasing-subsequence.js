@@ -17,65 +17,63 @@ const lengthOfLIS = (input) => {
 
 const lengthOfLISRec = (input, current, previous) => {
   // if we have reached the end of the string
-  if(current >= input.length) return 0
+  if (current >= input.length) return 0
   // there are two sub problems to include the current element or not
 
   // 1. skip the  current element  and calculate the length
   const nextIndex = current + 1
-  let length =  lengthOfLISRec(input, nextIndex, previous)
+  let length = lengthOfLISRec(input, nextIndex, previous)
   // 2. the current element is greater than the previous one , increment both the pointer
-  if( (input[previous] || -Infinity) < input[current]) { // since first case previous pointer is -1 ,if no value is found set it ot -Infinity for comparison
+  if ((input[previous] || -Infinity) < input[current]) { // since first case previous pointer is -1 ,if no value is found set it ot -Infinity for comparison
     length = Math.max(length, 1 + lengthOfLISRec(input, nextIndex, current))
   }
   return length
 }
-
 
 const lengthOfLISTopDown = (input, current, previous, dp) => {
   // N = input.length
   // Time = O(n^2)
   // Space = O(n^2 + O(n))  = O(N) // since we create n * n hash to store the element in the Map
   // base case , we have exceeded the bound
-  if(current >= input.length) return 0
+  if (current >= input.length) return 0
   const hash = `${previous}-${current}`
-  if(dp.has(hash) === false) {
+  if (dp.has(hash) === false) {
   // 1. skip the current index and calculate the length
-  const next = current + 1
-  let length = lengthOfLISTopDown(input, next, previous, dp)
-  // 2. include the current index and calculate the length
-  if((input[previous] || -Infinity) < input[current]) {
+    const next = current + 1
+    let length = lengthOfLISTopDown(input, next, previous, dp)
+    // 2. include the current index and calculate the length
+    if ((input[previous] || -Infinity) < input[current]) {
     // increment 1 as we have found an element that is greater than previous
-    length = Math.max(length, 1+ lengthOfLISTopDown(input, next, current, dp))
-  }
+      length = Math.max(length, 1 + lengthOfLISTopDown(input, next, current, dp))
+    }
     dp.set(hash, length)
   }
   return dp.get(hash)
-
 }
 
 const lengthOfLISBottomUp = (nums) => {
-    let dp = new Array(nums.length).fill(1);
-    let longest = 1;
-    for (let i = 1; i < nums.length; i++) {
-      for (let j = 0; j < i; j++) {
-        //If we find that nums[j] < nums[i], we may have found a longer increasing subsequence at index i.
-        if (nums[j] < nums[i]) {
-          dp[i] = Math.max(dp[i], dp[j]+1);
-          longest = Math.max(longest, dp[i]);
-        }
+  const dp = new Array(nums.length).fill(1)
+  let longest = 1
+  for (let i = 1; i < nums.length; i++) {
+    for (let j = 0; j < i; j++) {
+      // If we find that nums[j] < nums[i], we may have found a longer increasing subsequence at index i.
+      if (nums[j] < nums[i]) {
+        dp[i] = Math.max(dp[i], dp[j] + 1)
+        longest = Math.max(longest, dp[i])
       }
     }
-    return longest;
+  }
+  return longest
 }
 // Driver code
-var main = function () {
+const main = function () {
   const fn = lengthOfLIS
   const input = [
-    [ 6, 4, 1, 2 ],
-    [4,10,4,3,8,9],
-    [7,7,7],
-    [1,2],
-    [1,2,1],
+    [6, 4, 1, 2],
+    [4, 10, 4, 3, 8, 9],
+    [7, 7, 7],
+    [1, 2],
+    [1, 2, 1]
     // [10,9,2,5,3,7,101,18],
     // [0,1,0,3,2,3],
     // [7,7,7,7,7,7,7],
@@ -101,12 +99,12 @@ var main = function () {
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array:", input[i]);
-      var result = fn(input[i]);
-      console.log("\t Result is",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array:', input[i])
+    const result = fn(input[i])
+    console.log('\t Result is', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

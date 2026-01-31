@@ -3,7 +3,7 @@ Problem link : https://leetcode.com/problems/maximum-points-you-can-obtain-from-
 ------------------------------------------------------------------------------------
 Description: 1423. Maximum Points You Can Obtain from Cards
 
-There are several cards arranged in a row, and each card has an associated number of points. 
+There are several cards arranged in a row, and each card has an associated number of points.
 The points are given in the integer array cardPoints.
 In one step, you can take one card from the beginning or from the end of the row. You have to take exactly k cards.
 Your score is the sum of the points of the cards you have taken.
@@ -42,55 +42,54 @@ Constraints:
 */
 
 /**
- Intuition:  the problem says the cards are arranged in a row , on every turn you can only pick from start or end . 
+ Intuition:  the problem says the cards are arranged in a row , on every turn you can only pick from start or end .
  that means the if you have to pick k cards , it will always be left with a contiguous (n-k) cards on the table.
  You need to minimize the (n-k) contiguous array and subtract the min from sum of all the cards to get the maximum
 
  Time Complexity: O(N)
  Space Complexity:
- Notes: 
+ Notes:
  */
-var maxScore = function(cardPoints, k) {
-    const N = cardPoints.length
-    const totalCardPoints = cardPoints.reduce((prev, current) =>  prev +current, 0)
-    // console.info(totalCardPoints)
-    let min = Number.MAX_SAFE_INTEGER
-    let windowSum = 0
-    let left = 0
-    for(let right = 0; right < N ; right++) {
-      // if window is achieved  compare the current sum with min and assign
-      windowSum += cardPoints[right]
-      if(right - left + 1 === N-k) {
-        min = Math.min(windowSum, min)
-        windowSum -= cardPoints[left]
-        left++
-      }
+const maxScore = function (cardPoints, k) {
+  const N = cardPoints.length
+  const totalCardPoints = cardPoints.reduce((prev, current) => prev + current, 0)
+  // console.info(totalCardPoints)
+  let min = Number.MAX_SAFE_INTEGER
+  let windowSum = 0
+  let left = 0
+  for (let right = 0; right < N; right++) {
+    // if window is achieved  compare the current sum with min and assign
+    windowSum += cardPoints[right]
+    if (right - left + 1 === N - k) {
+      min = Math.min(windowSum, min)
+      windowSum -= cardPoints[left]
+      left++
     }
-    // console.info(`Max window ${N-k}(N:${N}, k:${k}) sum `, min)
-    return N-k <= 0 ? totalCardPoints: totalCardPoints - min
-};
+  }
+  // console.info(`Max window ${N-k}(N:${N}, k:${k}) sum `, min)
+  return N - k <= 0 ? totalCardPoints : totalCardPoints - min
+}
 // Driver code
- 
 
-var main = function () {
+const main = function () {
   const fn = maxScore
   const input = [
-    [[100,40,17,9,73,75], 3],
-    [[1,2,3,4,5,6,1], 3],
-    [[2,2,2], 2],
-    [[9,7,7,9,7,7,9], 7]
+    [[100, 40, 17, 9, 73, 75], 3],
+    [[1, 2, 3, 4, 5, 6, 1], 3],
+    [[2, 2, 2], 2],
+    [[9, 7, 7, 9, 7, 7, 9], 7]
 
   ]
   /**
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()

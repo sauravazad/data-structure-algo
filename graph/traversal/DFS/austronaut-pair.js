@@ -25,7 +25,7 @@ There are 6 ways to choose a pair (0,2) (0,3) (1,2) (1,3) (4,2) and (4,3) as ast
 const countPairs = (n, pairs) => {
   const graph = Array(n).fill().map(() => Array().fill([]))
 
-  for(let e of pairs) {
+  for (const e of pairs) {
     graph[e[0]].push(e[1])
     graph[e[1]].push(e[0])
   }
@@ -35,32 +35,32 @@ const countPairs = (n, pairs) => {
   const DFS = (v, count = 0) => {
     visited[v] = true
     count = 1
-    for (let neigh of graph[v]) {
-      if(!visited[neigh]) {
+    for (const neigh of graph[v]) {
+      if (!visited[neigh]) {
         count += DFS(neigh)
       }
     }
     return count
   }
 
-  for( let v in graph ) {
+  for (const v in graph) {
     const size = DFS(v)
     islandSizes.push(size)
   }
-  console.info("islandSizes", islandSizes)
+  console.info('islandSizes', islandSizes)
   let result = 1
 
-  for(let i = 0; i < islandSizes.length; i++) {
+  for (let i = 0; i < islandSizes.length; i++) {
     result *= islandSizes[i]
   }
   return result
 }
 
 // Driver code
-var main = function () {
+const main = function () {
   const fn = countPairs
   const input = [
-    [4, [[1,2],[2,3]]],
+    [4, [[1, 2], [2, 3]]],
     [5, [[0, 1], [2, 3], [0, 4]]],
     [6, [[0, 1], [0, 2], [2, 5]]]
   ]
@@ -68,12 +68,12 @@ var main = function () {
    *  Fill the time complexity for each function
    */
 
-  for (var i = 0; i < input.length; i++) {
-      console.log(i + 1 + ".\t Input array: \t", input[i]);
-      var result = fn(...input[i]);
-      console.log("\t Result is \t: ",result);
-      console.log("-".repeat(100));
+  for (let i = 0; i < input.length; i++) {
+    console.log(i + 1 + '.\t Input array: \t', input[i])
+    const result = fn(...input[i])
+    console.log('\t Result is \t: ', result)
+    console.log('-'.repeat(100))
   }
 }
 
-main();
+main()
