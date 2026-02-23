@@ -92,8 +92,9 @@ const topKFrequent = function (nums, k) {
   // 3. return the result in form of array
   const minHeap = new PriorityQueue()
   minHeap.buildHeap(nums)
-  // console.info(minHeap.sort())
+  console.info(minHeap.sort())
 }
+
 
 // Driver code
 const main = function () {

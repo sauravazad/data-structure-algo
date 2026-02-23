@@ -50,7 +50,7 @@ const largestRectangleArea = (heights) => {
         width = i
       }
       // console.log(i, width)
-      // console.info(`height: ${popped[0]} leftIndex = ${leftIndex}, rightIndex = ${i} Width = ${width}`)
+      console.info(`height: ${popped[0]} leftIndex = ${leftIndex}, rightIndex = ${i} Width = ${width}`)
       maxArea = Math.max(maxArea, width * heights[popped])
     }
   }
@@ -91,18 +91,25 @@ const largestAreaHistogram = (heights) => {
       // push the index into stack and increment
       stack.push(i++)
     } else {
+      // console.info(`right index i: ${i}`)
+      // console.info(`Elements in the stack: ${stack}`)
       // pop from the stack
       const popped = stack.pop()
       let width = 0
       if (stack.length === 0) {
         width = i
       } else {
+        // the width is calculated by i(right pointer) - last index in the stack(even tough the element might have been inserted later , 
+        // by getting the top of the stack after it has been popped we are ensuring that we consider the full with from current top to the right pointer the popped element is not involved in the width calculation) ; 
         width = i - stack[stack.length - 1] - 1
       }
+      // console.log(`Popped index`, popped)
+      // console.log(`width`, width)
       maxArea = Math.max(maxArea, heights[popped] * width)
     }
   }
-
+  // console.info(`right index i`, i)
+  // console.info(`Stack: `,stack)
   while (stack.length) {
     // pop from the stack
     const popped = stack.pop()
@@ -120,6 +127,9 @@ const largestAreaHistogram = (heights) => {
 // Driver code
 const main = function () {
   const input = [
+    [7,1,7,2,2,4],
+    [1,3,7],
+    [2,1,5,6,2,3],
     [1, 1, 2],
     // [ 2, 1, 0, 1 ],
     [2, 1, 5, 5, 2, 3],

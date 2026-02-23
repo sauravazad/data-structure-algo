@@ -34,6 +34,11 @@
       "count": 90
     }
   },
+  "array/hashing/group-anagrams.js": {
+    "@stylistic/max-len": {
+      "count": 103
+    }
+  },
   "array/minimum-absolute-difference.js": {
     "@stylistic/max-len": {
       "count": 76

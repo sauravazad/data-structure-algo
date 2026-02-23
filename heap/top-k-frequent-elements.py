@@ -32,7 +32,7 @@ class Solution:
         # 2-3. Build heap of top k frequent elements and
         # convert it into an output array
         # O(N log k) time
-        return heapq.nlargest(k, count.keys(), key=count.get) 
+        return heapq.nlargest(k, count.keys(), key=count.get)  # type: ignore
 
 
 if __name__ == "__main__":

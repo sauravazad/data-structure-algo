@@ -44,43 +44,33 @@ Constraints:
 */
 
 /**
- Intuition:  in order to calculate the trapped water at a given position i
- find the max item to its left and to its right : the water trapped would be min(left, right) - value[i]
-
- Now if we brute force this we will have to use two loops to track both value and then compute teh value for each position
-
- what is we can use prefix and postfix (max) sort of prefix sum or monotonic stack to always maintain the max left and right value for a given index
- then the answer would be simply  min(prefix, postfix) - value[i]
+ Intuition: 
+ instead of computing the left and right parts separately, we may think of some way to do it in one iteration.
+From the figure in dynamic programming approach, notice that as long as right_max[i]>left_max[i] (from element 0 to 6), the water trapped depends upon the left_max, and similar is the case when left_max[i]>right_max[i] (from element 8 to 11).
+So, we can say that if there is a larger bar at one end (say right), we are assured that the water trapped would be dependant on height of bar in current direction (from left to right). As soon as we find the bar at other end (right) is smaller, we start iterating in opposite direction (from right to left).
+We must maintain left_max and right_max during the iteration, but now we can do it in one iteration using 2 pointers, switching between the two.
  Time Complexity: 
  Space Complexity:
  Notes: 
  */
 var trap = function(height) {
-  /**
-    Build the max leftMax monotonic stack, including the index
-    Build the max rightMax monotonic stack
-    Iterate and min(leftMax, rightMax) - value[i] and sum the value
-
-   */
-  const N = height.length
-  let leftMax = Array(N).fill(0)
-  let rightMax = Array(N).fill(0)
-  let sum = 0
-  leftMax[0] = height[0] // as there is no wall
-  rightMax[N-1] = height[N-1]
-  for (let i = 1; i < N; i++ ) {
-    leftMax[i] = Math.max(height[i], leftMax[i-1])
+  let left = 0
+  let right = height.length - 1
+  let ans = 0
+  let left_max = 0
+  let right_max = 0
+  while(left < right) {
+    if(height[left] < height[right]) {
+      left_max = Math.max(height[left], left_max)
+      ans += left_max - height[left]
+      left++
+    } else {
+      right_max = Math.max(height[right], right_max)
+      ans += right_max - height[right]
+      --right
+    }
   }
-  
-  for(let j = N-2 ; j>=0; j--) {
-    rightMax[j] = Math.max(height[j], rightMax[j+1])
-  }
-  // console.info(`prefix`, leftMax)
-  // console.info(`postfix`, rightMax)
-  for(let i = 0 ; i <N;i++) {
-    sum += Math.max(0, Math.min(leftMax[i], rightMax[i])) - height[i]
-  }
-  return sum
+  return ans
 }; 
 
 // Driver code
