@@ -2,16 +2,16 @@
 https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  */
 
-const maxProfit = (prices) => {
-  // use
-  const result = maxProfitRec(prices, 0)
-  return result
-}
-
-const maxProfitRec = (prices, index) => {
-  if (index >= prices.length) return 0 // we have exceeded the array bounds
-}
-
+var maxProfit = function (prices) {
+  let minprice = Number.MAX_VALUE;
+  let maxprofit = 0;
+  for (let i = 0; i < prices.length; i++) {
+      if (prices[i] < minprice) minprice = prices[i];
+      else if (prices[i] - minprice > maxprofit)
+          maxprofit = prices[i] - minprice;
+  }
+  return maxprofit;
+};
 // Driver code
 const main = function () {
   const input = [

@@ -56,14 +56,14 @@ Constraints:
  * @return {number}
  */
 var binaryGap = function(n) {
-    let last = undefined
+    let last = -1
     let ans = 0
-    for(let i = 0 ; i <= 32; i++) {
-      if((n>>i) & 1) {
-      if (last !== undefined) {
-        ans = Math.max(ans, i - last)
+    for(let i = 0; i < 32; i++) {  
+      if((n >>> i) & 1) {  // check if the current bit is set
+        if (last !== -1) {
+          ans = Math.max(ans, i - last)
+        }
         last = i
-      }
       }
     }
     return ans
